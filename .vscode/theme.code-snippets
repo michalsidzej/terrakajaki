@@ -17,6 +17,6 @@
   // }
   "Theme snippet" : {
     "prefix": "theme",
-    "body": "${{theme}) => theme.$0};"
+    "body": "${({theme}) => theme.$0};"
   }
 }

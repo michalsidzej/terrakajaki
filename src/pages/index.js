@@ -1,9 +1,11 @@
 import React from 'react';
+import GlobalStyle from 'assets/styles/GlobalStyle';
 
 const IndexPage = () => (
-  <div>
+  <>
+    <GlobalStyle />
     <h1>Terra Kajaki</h1>
-  </div>
+  </>
 );
 
 export default IndexPage;
