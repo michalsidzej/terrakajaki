@@ -13,15 +13,13 @@ const theme = {
   },
   font: {
     size: {
-      xs: '.9rem',
-      s: '1.4rem',
-      m: '2.6rem',
+      xxs: '.9rem',
+      xs: '1.4rem',
+      s: '2.4rem',
+      m: '3.0rem',
       l: '4.2rem',
-      xl: '7.2rem',
+      xl: '5.4rem',
       xxl: '9.4rem',
-    },
-    family: {
-      montserrat: '"Montserrat", sans-serif',
     },
     weight: {
       thin: 300,

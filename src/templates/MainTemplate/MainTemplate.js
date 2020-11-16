@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'assets/styles/GlobalStyle';
-import SEO from 'components/SEO/SEO';
 import theme from 'assets/styles/theme';
+import Header from 'components/Header/Header';
 
+const StyledMain = styled.main`
+  padding-top: 6rem;
+`;
 const MainTemplate = ({ children }) => (
   <>
-    <SEO />
     <GlobalStyle />
     <ThemeProvider theme={theme}>
-      <>{children}</>
+      <Header />
+      <StyledMain>{children}</StyledMain>
     </ThemeProvider>
   </>
 );

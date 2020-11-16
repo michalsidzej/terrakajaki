@@ -4,6 +4,8 @@ const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
   *, *::before, *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -16,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-size: 1.6rem;
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  }
+
+  button {
+    font-family: inherit;
   }
 `;
 

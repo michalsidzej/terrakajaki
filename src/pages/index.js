@@ -1,11 +1,17 @@
 import React from 'react';
-import GlobalStyle from 'assets/styles/GlobalStyle';
+import MainTemplate from 'templates/MainTemplate/MainTemplate';
+import Hero from 'templates/HeroTemplate/HeroTemplate';
+import About from 'templates/AboutTemplate/AboutTemplate';
+import Faq from 'templates/FaqTemplate/FaqTemplate';
+import Contact from 'templates/ContactTemplate/ContactTemplate';
 
 const IndexPage = () => (
-  <>
-    <GlobalStyle />
-    <h1>Terra Kajaki</h1>
-  </>
+  <MainTemplate>
+    <Hero />
+    <About />
+    <Faq />
+    <Contact />
+  </MainTemplate>
 );
 
 export default IndexPage;
