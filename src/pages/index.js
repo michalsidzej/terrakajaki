@@ -7,7 +7,7 @@ import Contact from 'templates/ContactTemplate/ContactTemplate';
 
 const IndexPage = () => (
   <MainTemplate>
-    <Hero />
+    <Hero fileName="hero-1.jpg" alt="Adrien Mattern płynie na górskim kajaku" />
     <About />
     <Faq />
     <Contact />

@@ -4,9 +4,13 @@ import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'assets/styles/GlobalStyle';
 import theme from 'assets/styles/theme';
 import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
 
 const StyledMain = styled.main`
   padding-top: 6rem;
+  ${theme.media.tablet} {
+    padding-top: 10rem;
+  }
 `;
 const MainTemplate = ({ children }) => (
   <>
@@ -14,6 +18,7 @@ const MainTemplate = ({ children }) => (
     <ThemeProvider theme={theme}>
       <Header />
       <StyledMain>{children}</StyledMain>
+      <Footer />
     </ThemeProvider>
   </>
 );

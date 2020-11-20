@@ -10,7 +10,6 @@ const StyledButton = styled.button`
   text-transform: uppercase;
   color: ${({ theme }) => theme.color.white};
   font-size: ${({ theme }) => theme.font.size.s};
-  letter-spacing: 0.1rem;
   font-weight: ${({ theme }) => theme.font.weight.bold};
   background-color: ${({ theme }) => theme.color.secondary};
 

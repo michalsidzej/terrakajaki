@@ -25,11 +25,13 @@ const FAQ = () => {
   return (
     <StyledContainer>
       <Title>FAQ</Title>
-      {faqContent.map(({ question, answer }) => (
-        <>
-          <FAQcomponent question={question} answer={answer} />
-        </>
-      ))}
+      <StyledContainer noPadding noMargin>
+        {faqContent.map(({ question, answer }) => (
+          <>
+            <FAQcomponent question={question} answer={answer} />
+          </>
+        ))}
+      </StyledContainer>
     </StyledContainer>
   );
 };

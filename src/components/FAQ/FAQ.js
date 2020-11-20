@@ -3,14 +3,28 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import FaqToggle from 'components/FAQ/FaqToggle';
 
+const FaqItem = styled.div`
+  position: relative;
+  background-color: ${({ theme }) => theme.color.white};
+`;
 const FaqQuestion = styled.div``;
+
 const StyledHeader = styled.h3`
   display: inline;
+  cursor: pointer;
+
+  ${({ theme }) => theme.media.tablet} {
+    font-size: 2.4rem;
+  }
 `;
 
 const FaqAnswer = styled.div`
-  max-height: ${({ isOpen }) => (isOpen ? 'auto' : '0')};
   overflow: hidden;
+  background-color: red;
+  width: 100%;
+  transition: all 300ms ease-out;
+  max-height: ${({ isOpen }) => (isOpen ? '2em' : '0')};
+  z-index: 10;
 `;
 
 const FAQcomponent = ({ question, answer }) => {
@@ -21,14 +35,14 @@ const FAQcomponent = ({ question, answer }) => {
   };
 
   return (
-    <div>
+    <FaqItem>
       <FaqQuestion>
         <StyledHeader onClick={toggleQuestion}>{question}</StyledHeader>
-        <FaqToggle onClick={toggleQuestion} />
+        <FaqToggle onClick={toggleQuestion} isOpen={isQuestionOpen} />
       </FaqQuestion>
 
       <FaqAnswer isOpen={isQuestionOpen}>{answer}</FaqAnswer>
-    </div>
+    </FaqItem>
   );
 };
 

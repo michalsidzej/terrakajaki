@@ -1,20 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import StyledContainer from 'components/Container/Container';
 
-const FormWrapper = styled.form`
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+const FormWrapper = styled(StyledContainer)`
   background-color: ${({ theme }) => theme.color.dark};
-  border-radius: 1rem;
+  padding: 2rem;
+  ${({ theme }) => theme.media.tablet} {
+    border-radius: 1rem;
+  }
 `;
 const FormTitle = styled.h3`
   font-size: ${({ theme }) => theme.font.size.m};
   color: ${({ theme }) => theme.color.white};
   margin-bottom: 1rem;
+`;
+const Label = styled.label`
+  font-size: 1.6rem;
+  color: ${({ theme }) => theme.color.white};
+  /* display: block; */
+  width: 100%;
 `;
 
 const Input = styled.input`
@@ -29,7 +33,6 @@ const Input = styled.input`
 
 const TextArea = styled.textarea`
   width: 100%;
-  font-size: ${({ theme }) => theme.font.size.xs};
   margin: 0.5rem;
   color: ${({ theme }) => theme.color.dark};
   border: none;
@@ -40,14 +43,16 @@ const TextArea = styled.textarea`
 `;
 
 const ContactForm = () => (
-  <FormWrapper>
+  <FormWrapper flex center noMargin widthAuto>
     <FormTitle>Masz pytanie? Napisz!</FormTitle>
+    <Label for="email">Twój e-mail:</Label>
     <Input
       type="email"
       name="email"
       autoComplete="off"
       placeholder="Twój email"
     />
+    <Label for="message">Treść:</Label>
     <TextArea
       name="message"
       placeholder="W czym mogę pomóc?"

@@ -1,15 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 
-const StyledTitle = styled.h1`
+const Title = styled.h1`
   color: ${({ theme }) => theme.color.primary};
-  font-size: ${({ theme }) => theme.font.size.xl};
+  font-size: ${({ theme }) => theme.font.size.l};
   font-weight: ${({ theme }) => theme.font.weight.bold};
   line-height: 6.4rem;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
-
   ::after {
     content: '';
     height: 0.4rem;
@@ -18,15 +15,13 @@ const StyledTitle = styled.h1`
     display: block;
     bottom: 0;
   }
+
+  ${({ contact }) =>
+    contact &&
+    css`
+      margin-left: 2rem;
+      margin-bottom: 0;
+    `}
 `;
-
-const Title = ({ children }) => <StyledTitle>{children}</StyledTitle>;
-
-Title.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-};
 
 export default Title;

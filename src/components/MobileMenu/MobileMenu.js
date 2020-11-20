@@ -6,12 +6,17 @@ import { StyledButton } from 'components/Button/Button';
 const StyledWrapper = styled.div`
   position: fixed;
   right: 0;
-  top: 6.5rem;
+  top: 6rem;
   height: calc(100vh - 6rem);
   width: 90vw;
   background-color: ${({ theme }) => theme.color.light};
   transform: translateX(${({ isOpen }) => (isOpen ? '0' : '100%')});
   transition: transform 150ms ease-out 0s;
+  box-shadow: inset 0 0.5rem 0.5rem -0.5rem ${({ theme }) => theme.color.promary};
+
+  ${({ theme }) => theme.media.tablet} {
+    display: none;
+  }
 `;
 
 const StyledMenu = styled.ul`
@@ -30,11 +35,11 @@ const StyledMenuItem = styled.li`
 
 const FaqButton = styled(StyledButton)`
   width: 60%;
-  height: 4rem;
   margin-top: auto;
+  margin-bottom: 5rem;
 `;
 
-const menuItems = ['kajaki', 'inspiracje', 'kontakt'];
+const menuItems = ['kajaki', 'aktualności', 'kontakt'];
 
 const MobileMenu = ({ isOpen }) => (
   <StyledWrapper isOpen={isOpen}>

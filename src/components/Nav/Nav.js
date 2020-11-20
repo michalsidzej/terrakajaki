@@ -4,15 +4,13 @@ import styled from 'styled-components';
 const StyledList = styled.ul`
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `;
-const StyledListItem = styled.li`
-  padding: 0 1rem;
-`;
+const StyledListItem = styled.li``;
 const Nav = () => (
   <StyledList>
     <StyledListItem>Kajaki</StyledListItem>
-    <StyledListItem>Inspiracje</StyledListItem>
+    <StyledListItem>Aktualności</StyledListItem>
     <StyledListItem>Kontakt</StyledListItem>
   </StyledList>
 );
