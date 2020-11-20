@@ -74,7 +74,6 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    overflow: hidden;
   }
 `;
 
