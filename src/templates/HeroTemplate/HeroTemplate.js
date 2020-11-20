@@ -18,6 +18,7 @@ const BannerCaption = styled.div`
   width: 100%;
   font-weight: 900;
   background-color: ${({ theme }) => theme.color.dark};
+  overflow: hidden;
   ${({ theme }) => theme.media.tablet} {
     padding: 4rem 0;
   }
