@@ -12,14 +12,18 @@ const StyledButton = styled.button`
   font-size: ${({ theme }) => theme.font.size.s};
   font-weight: ${({ theme }) => theme.font.weight.bold};
   background-color: ${({ theme }) => theme.color.secondary};
+  transition: transform 150ms ease-out 0s, background-color 150ms ease-out 0s;
 
+  &:focus {
+    outline: none;
+  }
   &:hover {
     background-color: ${({ theme }) => theme.color.medium};
     cursor: pointer;
   }
-
   &:active {
     transform: scale(0.95);
+    border: none;
   }
 `;
 

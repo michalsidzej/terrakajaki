@@ -31,10 +31,17 @@ const StyledContainer = styled.div`
           }
         `}
     
-    ${({ column }) =>
+      ${({ column }) =>
         column &&
         css`
           flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+        `}
+      ${({ row }) =>
+        row &&
+        css`
+          flex-direction: row;
           justify-content: flex-start;
           align-items: flex-start;
         `}
@@ -58,6 +65,11 @@ const StyledContainer = styled.div`
     widthAuto &&
     css`
       width: auto;
+    `}
+  ${({ relative }) =>
+    relative &&
+    css`
+      position: relative;
     `}
 `;
 

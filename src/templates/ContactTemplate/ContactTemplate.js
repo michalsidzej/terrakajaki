@@ -9,7 +9,7 @@ const StyledHeader = styled.h3`
   color: ${({ theme }) => theme.color.primary};
 `;
 
-const Data = styled.p``;
+const Address = styled.address``;
 
 const Contact = () => (
   <>
@@ -18,18 +18,18 @@ const Contact = () => (
       <StyledContainer flex noPadding noMargin spaceEvenly>
         <StyledContainer>
           <StyledHeader>Dane kontaktowe</StyledHeader>
-          <Data>
+          <Address>
             Tomasz Jakubiec <br />
             tel. : +48 603 305 812 <br />
             tomanek@terrakajaki.pl <br />
-          </Data>
+          </Address>
           <StyledHeader>Dane firmowe</StyledHeader>
-          <Data>
+          <Address>
             Ul. Krucza 4c <br />
             30-245 Kraków <br />
             NIP: 678 112 46 21 <br />
             Regon: _______ <br />
-          </Data>
+          </Address>
         </StyledContainer>
         <ContactForm />
       </StyledContainer>

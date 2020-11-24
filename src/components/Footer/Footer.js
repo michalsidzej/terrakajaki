@@ -5,7 +5,7 @@ import Socials from 'components/Socials/Socials';
 const StyledFooterWrapper = styled.footer`
   /* height: 6rem; */
   width: 100vw;
-  padding: 0.75rem 0;
+  /*padding: 0.75rem 0; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,7 +26,7 @@ const UpperFooter = styled.div`
     position: absolute;
     background-color: ${({ theme }) => theme.color.light};
     opacity: 60%;
-    width: 100vw;
+    width: 100%;
     height: 2px;
     bottom: 0;
   }

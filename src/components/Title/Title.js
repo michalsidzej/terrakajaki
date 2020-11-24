@@ -21,6 +21,10 @@ const Title = styled.h1`
     css`
       margin-left: 2rem;
       margin-bottom: 0;
+      ${({ theme }) => theme.media.tablet} {
+        margin-left: 0;
+        margin-bottom: 2rem;
+      }
     `}
 `;
 

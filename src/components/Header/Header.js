@@ -33,7 +33,7 @@ const HeaderTop = styled.div`
 `;
 const MenuWrapper = styled.div`
   display: none;
-  width: 100vw;
+  width: 100%;
   height: 50%;
   background-color: ${({ theme }) => theme.color.primary};
 
@@ -45,6 +45,7 @@ const MenuWrapper = styled.div`
 `;
 const Menu = styled.nav`
   width: ${({ theme }) => theme.maxwidth};
+  max-width: 100%;
   color: ${({ theme }) => theme.color.white};
   font-size: 2.4rem;
   font-weight: 500;
