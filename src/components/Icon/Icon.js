@@ -2,11 +2,18 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import SVG from 'react-inlinesvg';
+import styled from 'styled-components';
+
+const Center = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const Icon = ({ src, ...props }) => (
-  <div {...props}>
+  <Center {...props}>
     <SVG src={src} />
-  </div>
+  </Center>
 );
 
 export default Icon;

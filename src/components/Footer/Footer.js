@@ -4,8 +4,7 @@ import Socials from 'components/Socials/Socials';
 
 const StyledFooterWrapper = styled.footer`
   /* height: 6rem; */
-  width: 100vw;
-  /*padding: 0.75rem 0; */
+  padding: 0.75rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

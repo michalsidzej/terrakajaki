@@ -1,12 +1,12 @@
 import React from 'react';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
-import ProductsTemplate from 'templates/ProductsTemplate/ProductsTemplate';
+import ShopTemplate from 'templates/ShopTemplate/ShopTemplate';
 import PresaleBanner from 'components/PresaleBanner/PresaleBanner';
 
 const Shop = () => (
   <MainTemplate>
     <PresaleBanner />
-    <ProductsTemplate />
+    <ShopTemplate />
   </MainTemplate>
 );
 

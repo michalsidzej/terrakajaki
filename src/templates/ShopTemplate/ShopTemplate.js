@@ -1,7 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import StyledContainer from 'components/Container/Container';
+
 import SingleProduct from 'components/Product/Product';
+
+const StyledContainer = styled.div`
+  ${({ theme }) => theme.media.tablet} {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: ${({ theme }) => theme.maxwidth};
+    padding: 2rem 0;
+  }
+`;
 
 const Sidebar = styled.aside`
   width: 20%;
@@ -17,8 +28,8 @@ const ProductsList = styled.ol`
 `;
 
 const productsItems = new Array(10).fill('rexy');
-const ProductsTemplate = () => (
-  <StyledContainer flex row>
+const ShopTemplate = () => (
+  <StyledContainer>
     <Sidebar>
       <Filters>
         <ol>
@@ -39,4 +50,4 @@ const ProductsTemplate = () => (
   </StyledContainer>
 );
 
-export default ProductsTemplate;
+export default ShopTemplate;

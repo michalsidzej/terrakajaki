@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { StyledButton } from 'components/Button/Button';
@@ -23,32 +24,46 @@ const StyledContainer = styled.div`
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: auto;
-  grid-column-gap: 3rem;
+  grid-row-gap: 20px;
+  ${({ theme }) => theme.media.tablet} {
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 3rem;
+  }
 `;
 
 const ProductMedia = styled.div`
-  width: 100%;
-  margin-right: auto;
+  ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    margin-right: auto;
+  }
 `;
 const ProductInfo = styled.div`
-  position: sticky;
-  top: 12rem;
-  width: 100%;
-  max-height: 400px;
-  background-color: ${({ theme }) => theme.color.light};
-  border-radius: 1rem;
+  position: static;
+  ${({ theme }) => theme.media.tablet} {
+    position: sticky;
+    top: 12rem;
+    padding: 2rem 0;
+    width: 100%;
+    max-height: 400px;
+    background-color: ${({ theme }) => theme.color.light};
+    border-radius: 1rem;
+  }
 `;
 
 const ProductDetails = styled.div`
-  margin-top: 4rem;
+  margin-bottom: 4rem;
   width: 100%;
 `;
 const Gallery = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  ${({ theme }) => theme.media.tablet} {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+const InfoHeader = styled.h2`
+  padding: 0;
 `;
 const DetailsHeader = styled.h2`
   padding: 2rem 0;
@@ -81,9 +96,9 @@ const ProductImage = styled(Img)`
   height: auto;
 `;
 
-const SingleProductTemplate = () => {
+const SingleProductTemplate = ({ pageContext }) => {
   const { allContentfulProduct } = useStaticQuery(graphql`
-    query MyQuery1 {
+    query MyQuery {
       allContentfulProduct {
         nodes {
           id
@@ -93,6 +108,7 @@ const SingleProductTemplate = () => {
           description {
             description
           }
+          price
           mainImage {
             fluid(quality: 90) {
               ...GatsbyContentfulFluid_withWebp
@@ -107,7 +123,7 @@ const SingleProductTemplate = () => {
           brand {
             brandName
             logo {
-              fixed(quality: 100, height: 70) {
+              fixed(quality: 100, width: 200) {
                 ...GatsbyContentfulFixed_withWebp
               }
             }
@@ -116,7 +132,6 @@ const SingleProductTemplate = () => {
       }
     }
   `);
-
   const {
     brand,
     productName,
@@ -129,10 +144,16 @@ const SingleProductTemplate = () => {
     volume,
     weight,
     width,
-  } = allContentfulProduct.nodes.find((item) => item.slug === 'rexy');
+    price,
+  } = allContentfulProduct.nodes.find(
+    (item) => item.slug === pageContext.product.slug
+  );
 
   const tableContent = [
-    ['Nazwa', `${brand[0].brandName} ${productName}`],
+    [
+      'Nazwa',
+      `${brand.map(({ brandName }) => brandName).join(' ')} ${productName}`,
+    ],
     ['Długość', `${length} cm`],
     ['Szerokość', `${width} cm`],
     ['Waga', `${weight} kg`],
@@ -143,7 +164,7 @@ const SingleProductTemplate = () => {
   return (
     <MainTemplate>
       <PresaleBanner />
-      <StyledContainer flex column relative>
+      <StyledContainer>
         <GridContainer>
           <ProductMedia>
             <Gallery>
@@ -151,26 +172,23 @@ const SingleProductTemplate = () => {
             </Gallery>
           </ProductMedia>
           <ProductInfo>
-            <Img fixed={brand[0].logo.fixed} />
-            <DetailsHeader>
-              {' '}
-              {brand[0].brandName} {productName}
-            </DetailsHeader>
-            <DetailsHeader>3499,99 zł</DetailsHeader>
+            {brand.map(({ logo }) => (
+              <>
+                <Img fixed={logo.fixed} />
+              </>
+            ))}
+
+            <InfoHeader>
+              {brand.map(({ brandName }) => `${brandName}`).join(' ')}{' '}
+              {productName}
+            </InfoHeader>
+            <InfoHeader>{price} zł</InfoHeader>
             <StyledButton>Kup Teraz</StyledButton>
           </ProductInfo>
           <ProductDetails>
             <DetailsHeader>{shortDescription}</DetailsHeader>
 
             <DetailsParagraph>{description.description}</DetailsParagraph>
-            <DetailsParagraph>
-              Kajak znakomicie radzi sobie na trudniejszej wodzie zachowując
-              niektóre cechy kajaka creekowego. Rexy jest przewidywalny,
-              pokonuje z łatwością duże odwoje oraz dropy dzięki odpowiednio
-              zaprojektowanemu dziobowi z dość dużym rockerem. To kajak na
-              którym nie będziesz się nudził i rozwiniesz nowe umiejętności.
-              Idealny do urozmaicenia ulubionych rzek czy zawodów.
-            </DetailsParagraph>
             <DetailsHeader>Specyfikacja techniczna</DetailsHeader>
             <DetailsTable>
               <tbody>
@@ -187,6 +205,13 @@ const SingleProductTemplate = () => {
       </StyledContainer>
     </MainTemplate>
   );
+};
+
+SingleProductTemplate.propTypes = {
+  pageContext: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export default SingleProductTemplate;
