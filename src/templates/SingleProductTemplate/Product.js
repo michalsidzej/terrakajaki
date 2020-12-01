@@ -7,6 +7,7 @@ import Img from 'gatsby-image';
 import PresaleBanner from 'components/PresaleBanner/PresaleBanner';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import ShopTemplate from 'templates/ShopTemplate/ShopTemplate';
+import Colors from 'components/Product/Colors';
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -47,7 +48,6 @@ const ProductInfo = styled.div`
     padding: 2rem 0;
     width: 100%;
     max-height: 400px;
-    background-color: ${({ theme }) => theme.color.light};
     border-radius: 1rem;
   }
 `;
@@ -66,6 +66,9 @@ const Gallery = styled.div`
   }
 `;
 const InfoHeader = styled.h2`
+  padding: 0;
+`;
+const InfoHeader2 = styled.h3`
   padding: 0;
 `;
 const DetailsHeader = styled.h2`
@@ -97,6 +100,13 @@ const TableData = styled.td`
 const ProductImage = styled(Img)`
   width: 100%;
   height: auto;
+`;
+const CrossOut = styled.span`
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+`;
+const Discount = styled.span`
+  color: #db2100;
 `;
 
 const SingleProductTemplate = ({ pageContext }) => {
@@ -185,7 +195,13 @@ const SingleProductTemplate = ({ pageContext }) => {
               {brand.map(({ brandName }) => `${brandName}`).join(' ')}{' '}
               {productName}
             </InfoHeader>
-            <InfoHeader>{price} zł</InfoHeader>
+            <InfoHeader>
+              <CrossOut>{price} zł</CrossOut>{' '}
+              <Discount>{price * 0.85} zł</Discount>
+            </InfoHeader>
+            <InfoHeader2>Dostępne kolory:</InfoHeader2>
+            <Colors />
+
             <StyledButton>Kup Teraz</StyledButton>
           </ProductInfo>
           <ProductDetails>

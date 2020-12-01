@@ -25,12 +25,12 @@ const Sidebar = styled.aside`
 const Filters = styled.div``;
 */
 
-const ProductsList = styled.ol`
+const ProductsList = styled.div`
+  display: grid;
+  grid-gap: 3rem;
   ${({ theme }) => theme.media.tablet} {
     width: 100%;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
   }
 `;
 

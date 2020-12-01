@@ -28,7 +28,7 @@ const theme = {
       exbold: 900,
     },
   },
-  maxwidth: '1100px',
+  maxwidth: '900px',
 };
 
 export default theme;
