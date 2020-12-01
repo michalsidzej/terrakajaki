@@ -35,12 +35,13 @@ const Centerer = styled.div`
     font-size: 180px;
     opacity: 15%;
     color: ${({ theme }) => theme.color.white};
-    font-weight: 900;
     position: absolute;
     top: -50px;
     left: -10%;
     transform: rotate(-10deg);
     z-index: 10;
+    font-family: 'Montserrat Black', sans-serif;
+    font-weight: 900;
     ${({ theme }) => theme.media.tablet} {
       top: -80px;
       left: 0;
@@ -68,7 +69,7 @@ const PresaleBanner = () => (
   <BannerCaption>
     <Centerer flex>
       <StyledHeader>Zamów dziś, a otrzymasz 15% rabatu!</StyledHeader>
-      <BannerButton> Przedsprzedaż </BannerButton>
+      <BannerButton to="/sklep/"> Przedsprzedaż </BannerButton>
     </Centerer>
   </BannerCaption>
 );

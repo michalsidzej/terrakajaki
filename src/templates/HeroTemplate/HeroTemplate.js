@@ -47,10 +47,7 @@ const StyledHeader = styled.h2`
     font-size: ${({ theme }) => theme.font.size.xl};
   }
 `;
-const Button = styled(StyledButton)`
-  display: block;
-  max-width: 100%;
-`;
+const Button = styled(StyledButton)``;
 
 const Hero = ({ fileName, alt }) => (
   <HeroWrapper>
@@ -60,7 +57,7 @@ const Hero = ({ fileName, alt }) => (
       <HeroCaption>
         <HeroCaptionText>
           <StyledHeader>Mamy fajne kajaki</StyledHeader>
-          <Button> Zobacz </Button>
+          <Button to="/sklep/"> Zobacz </Button>
         </HeroCaptionText>
       </HeroCaption>
     </HeroImageWrapper>

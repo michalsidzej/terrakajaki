@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import StyledContainer from 'components/Container/Container';
 
 const FormWrapper = styled(StyledContainer)`
+  width: 100%;
   background-color: ${({ theme }) => theme.color.dark};
   padding: 2rem;
   ${({ theme }) => theme.media.tablet} {
     border-radius: 1rem;
+    width: auto;
   }
 `;
 const FormTitle = styled.h3`

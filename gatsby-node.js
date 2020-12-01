@@ -34,7 +34,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   );
   queryResults.data.allContentfulProduct.nodes.forEach((node) => {
     createPage({
-      path: `/products/${node.slug}`,
+      path: `/kayaks/${node.slug}`,
       component: productTemplate,
       context: {
         product: node,

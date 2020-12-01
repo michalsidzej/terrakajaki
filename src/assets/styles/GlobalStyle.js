@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
   @font-face{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat','Montserrat-Black' sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
-    font-weight: 400, 600, 900;
+    font-weight: 400, 600;
   }
   *, *::before, *::after {
     box-sizing: border-box;
@@ -22,8 +22,8 @@ const GlobalStyle = createGlobalStyle`
     font: inherit;
   }
 
-  ul[class],
-  ol[class] {
+  ul,
+  ol {
     padding: 0;
     list-style: none;
   }
@@ -45,8 +45,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  a:not([class]) {
-  text-decoration-skip-ink: auto;
+  a {
+  font-weight: 600;
+  color: #041C33;
+  text-decoration: none;
   }
   img {
   max-width: 100%;
@@ -67,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     min-height: 100vh;
@@ -75,6 +77,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeSpeed;
     line-height: 1.5;
   }
+
 `;
 
 export default GlobalStyle;

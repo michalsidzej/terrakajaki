@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import Logo from 'components/Logo/Logo';
 import Hamburger from 'components/Hamburger/Hamburger';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
@@ -62,7 +63,9 @@ const Header = () => {
   return (
     <StyledHeaderWrapper>
       <HeaderTop>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
       </HeaderTop>
       <MenuWrapper>
         <Menu>

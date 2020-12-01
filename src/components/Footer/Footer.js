@@ -1,6 +1,7 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Socials from 'components/Socials/Socials';
+import { Link } from 'gatsby';
 
 const StyledFooterWrapper = styled.footer`
   /* height: 6rem; */
@@ -30,19 +31,39 @@ const UpperFooter = styled.div`
     bottom: 0;
   }
 `;
+const FooterLink = styled(Link)`
+  color: ${({ theme }) => theme.color.light};
+  font-size: 1.6rem;
+  opacity: 60%;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+
+  :after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: ${({ theme }) => theme.color.light};
+    opacity: 0;
+    transition: opacity 50ms ease-out 0s;
+  }
+  &:hover :after {
+    opacity: 1;
+  }
+`;
 
 const FooterParagraph = styled.p`
   color: ${({ theme }) => theme.color.light};
   font-size: ${({ theme }) => theme.font.size.xs};
   opacity: 60%;
   padding: 0.5rem;
-
-  ${({ uppercase }) =>
-    uppercase &&
-    css`
-      text-transform: uppercase;
-    `}
 `;
+
 const FooterHeader = styled.h3`
   color: ${({ theme }) => theme.color.light};
   text-transform: uppercese;
@@ -61,8 +82,8 @@ const Footer = () => (
       </SocialIcons>
     </UpperFooter>
 
-    <FooterParagraph uppercase>Polityka Cookies</FooterParagraph>
-    <FooterParagraph uppercase>Polityka Prywatności</FooterParagraph>
+    <FooterLink to="/polityka-cookies/">Polityka Cookies</FooterLink>
+    <FooterLink to="/polityka-prywatnosci/">Polityka Prywatności</FooterLink>
     <FooterParagraph>Copyright &copy; {currentYear}</FooterParagraph>
   </StyledFooterWrapper>
 );

@@ -6,11 +6,12 @@ import { StyledButton } from 'components/Button/Button';
 import Img from 'gatsby-image';
 import PresaleBanner from 'components/PresaleBanner/PresaleBanner';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
+import ShopTemplate from 'templates/ShopTemplate/ShopTemplate';
 
 const StyledContainer = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -54,6 +55,8 @@ const ProductInfo = styled.div`
 const ProductDetails = styled.div`
   margin-bottom: 4rem;
   width: 100%;
+  display: grid;
+  grid-row-gap: 20px;
 `;
 const Gallery = styled.div`
   display: grid;
@@ -200,6 +203,8 @@ const SingleProductTemplate = ({ pageContext }) => {
                 ))}
               </tbody>
             </DetailsTable>
+            <DetailsHeader> Zobacz inne kajaki w naszej ofercie</DetailsHeader>
+            <ShopTemplate />
           </ProductDetails>
         </GridContainer>
       </StyledContainer>

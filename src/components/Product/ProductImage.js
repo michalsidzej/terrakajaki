@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
@@ -14,34 +13,14 @@ const StyledImage = styled(Img)`
   height: auto;
 `;
 
-const ProductImage = ({ fileName, alt }) => {
-  const { allImageSharp } = useStaticQuery(graphql`
-    query {
-      allImageSharp {
-        nodes {
-          fluid(quality: 90) {
-            originalName
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-
-  const { fluid } = allImageSharp.nodes.find(
-    (n) => n.fluid.originalName === fileName
-  );
-
-  return (
-    <StyledFigure>
-      <StyledImage fluid={fluid} alt={alt} />
-    </StyledFigure>
-  );
-};
+const ProductImage = ({ fluid }) => (
+  <StyledFigure>
+    <StyledImage fluid={fluid} />
+  </StyledFigure>
+);
 
 ProductImage.propTypes = {
-  fileName: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
+  fluid: PropTypes.oneOfType([Object, PropTypes.arrayOf(Object)]).isRequired,
 };
 
 export default ProductImage;
