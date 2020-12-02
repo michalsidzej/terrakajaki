@@ -6,7 +6,10 @@ const theme = {
     dark: '#041C33',
     medium: '#046880',
     light: '#FDFDFD',
+<<<<<<< HEAD
     red: '#db2100',
+=======
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
   },
   media: {
     tablet: '@media (min-width: 728px)',

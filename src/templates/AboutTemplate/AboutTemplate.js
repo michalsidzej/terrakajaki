@@ -11,7 +11,11 @@ const StyledParagraph = styled.p`
 `;
 
 const About = () => (
+<<<<<<< HEAD
   <StyledContainer id='about' flex column paddingTop>
+=======
+  <StyledContainer flex column>
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
     <Title>Coś o nas</Title>
     <StyledContainer noPadding noMargin flex spaceEvenly>
       <StyledContainer noPadding noMargin widthAuto>

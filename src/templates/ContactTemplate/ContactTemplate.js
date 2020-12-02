@@ -22,7 +22,11 @@ const Address = styled.address`
 `;
 
 const Contact = () => (
+<<<<<<< HEAD
   <StyledContainer id='contact' noPadding paddingTop>
+=======
+  <StyledContainer noPadding>
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
     <Title contact>Kontakt</Title>
     <StyledContainer flex noPadding noMargin spaceEvenly>
       <StyledColumn>
@@ -38,7 +42,10 @@ const Contact = () => (
           <StyledLink href="mailto:tomanek@terrakajaki.pl">
             tomanek@terrakajaki.pl
           </StyledLink>{' '}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
           <br />
         </Address>
         <StyledHeader>Dane firmowe</StyledHeader>
@@ -47,7 +54,10 @@ const Contact = () => (
           30-245 Kraków <br />
           NIP: 678 112 46 21 <br />
           Regon: _______ <br />
+<<<<<<< HEAD
           Konto (zł): 
+=======
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
         </Address>
       </StyledColumn>
       <ContactForm />

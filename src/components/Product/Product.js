@@ -17,7 +17,10 @@ const CrossOut = styled.span`
   text-decoration: line-through;
   margin-right: 0.5rem;
 `;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
 const Discount = styled.span`
   color: #db2100;
 `;
@@ -31,7 +34,11 @@ const SingleProduct = ({ brand, name, price, shortDetails, fluid, slug }) => {
   const path = `/kayaks/${slug}`;
   return (
     <StyledSingleProduct to={path}>
+<<<<<<< HEAD
       <ProductImage fluid={fluid}/>
+=======
+      <ProductImage fluid={fluid} />
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
       <ProductSummary>
         <ProductName>
           {brand.map(({ brandName }) => `${brandName}`).join(' ')} {name}{' '}

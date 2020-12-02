@@ -23,7 +23,6 @@ const Centerer = styled.div`
         justify-content: flex-end;
       }
     `}
-
   width: ${({ theme }) => theme.maxwidth};
   max-width: 100%;
   margin: 0 auto;

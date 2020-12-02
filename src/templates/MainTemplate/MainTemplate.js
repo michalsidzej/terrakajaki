@@ -6,7 +6,10 @@ import theme from 'assets/styles/theme';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
 const StyledMain = styled.main`
   padding-top: 6rem;
   ${theme.media.tablet} {

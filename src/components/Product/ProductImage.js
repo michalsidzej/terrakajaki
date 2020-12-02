@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
@@ -17,6 +18,15 @@ const StyledFigure = styled.div`
     color: ${({theme}) => theme.color.red};
   }
   `}
+=======
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
+
+const StyledFigure = styled.figure`
+  position: relative;
+  z-index: 10;
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
 `;
 
 const StyledImage = styled(Img)`
@@ -25,7 +35,11 @@ const StyledImage = styled(Img)`
 `;
 
 const ProductImage = ({ fluid }) => (
+<<<<<<< HEAD
   <StyledFigure discount>
+=======
+  <StyledFigure>
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
     <StyledImage fluid={fluid} />
   </StyledFigure>
 );

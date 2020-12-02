@@ -5,11 +5,18 @@ import Logo from 'components/Logo/Logo';
 import Hamburger from 'components/Hamburger/Hamburger';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
 import Nav from 'components/Nav/Nav';
+<<<<<<< HEAD
 import FacebookSaleBanner from 'components/FacebookSaleBanner/FacebookSaleBanner'
 
 const StyledHeaderWrapper = styled.header`
   height: 6rem;
   width: 100%;
+=======
+
+const StyledHeaderWrapper = styled.header`
+  height: 6rem;
+  width: 100vw;
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
   padding: 0.75rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -50,7 +57,12 @@ const Menu = styled.nav`
   width: ${({ theme }) => theme.maxwidth};
   max-width: 100%;
   color: ${({ theme }) => theme.color.white};
+<<<<<<< HEAD
   font-size: 2rem;
+=======
+  font-size: 2.4rem;
+  font-weight: 500;
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
 `;
 
 const Header = () => {
@@ -66,17 +78,27 @@ const Header = () => {
         <Link to="/">
           <Logo />
         </Link>
+<<<<<<< HEAD
       </HeaderTop>  
+=======
+      </HeaderTop>
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
       <MenuWrapper>
         <Menu>
           <Nav />
         </Menu>
       </MenuWrapper>
+<<<<<<< HEAD
       <FacebookSaleBanner />
       <Hamburger onClick={toggleMobileMenu} isOpen={isMenuOpen} />
       <MobileMenu isOpen={isMenuOpen} />
 
     </StyledHeaderWrapper> 
+=======
+      <Hamburger onClick={toggleMobileMenu} isOpen={isMenuOpen} />
+      <MobileMenu isOpen={isMenuOpen} />
+    </StyledHeaderWrapper>
+>>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
   );
 };
 
