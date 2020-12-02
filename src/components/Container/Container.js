@@ -49,15 +49,10 @@ const StyledContainer = styled.div`
 
   ${({ theme }) => theme.media.tablet} {
     max-width: ${({ theme }) => theme.maxwidth};
-<<<<<<< HEAD
-=======
-    padding: 2rem 0;
->>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
   }
   ${({ noPadding }) =>
     noPadding &&
     css`
-<<<<<<< HEAD
       padding-left: 0;
       padding-right: 0;
     `}
@@ -70,10 +65,6 @@ const StyledContainer = styled.div`
     } 
     `}
 
-=======
-      padding: 0;
-    `}
->>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
   ${({ noMargin }) =>
     noMargin &&
     css`

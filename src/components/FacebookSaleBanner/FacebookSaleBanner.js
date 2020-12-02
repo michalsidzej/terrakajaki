@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { StyledButton } from 'components/Button/Button';
 
 const BannerCaption = styled.div`
   position: relative;
@@ -35,11 +34,6 @@ const StyledHeader = styled.h3`
   ${({ theme }) => theme.media.tablet} {
     font-size: 1.8rem;
   }
-`;
-
-const BannerButton = styled(StyledButton)`
-  position: relative;
-  z-index: 20;
 `;
 
 const PresaleBanner = () => (

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import MainTemplate from 'templates/Maintemplate/Maintemplate'
+import MainTemplate from 'templates/MainTemplate/MainTemplate'
 import StyledContainer from 'components/Container/Container'
 import Button from 'components/Button/Button'
 
@@ -53,7 +52,7 @@ const Presale = () => (
         </StyledParagraph>
         <StyledButton to='sklep'>Wróć do sklepu</StyledButton>
         <StyledParagraph>
-
+          PS Tak, w naszym sklepie będą też sprzedawane kajaki firmy Spade, pojawią się niedługo. 
         </StyledParagraph>
       </Container>
   </MainTemplate>

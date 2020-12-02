@@ -28,10 +28,7 @@ const Filters = styled.div``;
 const ProductsList = styled.div`
   display: grid;
   grid-gap: 3rem;
-<<<<<<< HEAD
   padding: 2rem;
-=======
->>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
   ${({ theme }) => theme.media.tablet} {
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;

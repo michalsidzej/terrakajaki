@@ -69,11 +69,7 @@ const PresaleBanner = () => (
   <BannerCaption>
     <Centerer flex>
       <StyledHeader>Zamów dziś, a otrzymasz 15% rabatu!</StyledHeader>
-<<<<<<< HEAD
       <BannerButton to="/przedsprzedaz/"> Przedsprzedaż </BannerButton>
-=======
-      <BannerButton to="/sklep/"> Przedsprzedaż </BannerButton>
->>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
     </Centerer>
   </BannerCaption>
 );

@@ -62,6 +62,7 @@ const Header = () => {
 
   return (
     <StyledHeaderWrapper>
+      <FacebookSaleBanner />
       <HeaderTop>
         <Link to="/">
           <Logo />
@@ -72,7 +73,6 @@ const Header = () => {
           <Nav />
         </Menu>
       </MenuWrapper>
-      <FacebookSaleBanner />
       <Hamburger onClick={toggleMobileMenu} isOpen={isMenuOpen} />
       <MobileMenu isOpen={isMenuOpen} />
 
