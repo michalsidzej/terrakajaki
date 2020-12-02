@@ -5,19 +5,12 @@ import StyledContainer from 'components/Container/Container';
 
 const Container = styled(StyledContainer)`
   max-width: 700px;
-<<<<<<< HEAD
   padding: 6rem 0;
-=======
-  padding: 10rem 0;
->>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
 `;
 
 const StyledTitle = styled.h1`
   padding: 2rem;
-<<<<<<< HEAD
   text-align: center;
-=======
->>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
 `;
 const StyledH2 = styled.h2`
   padding: 2rem;

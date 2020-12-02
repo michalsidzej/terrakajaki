@@ -23,11 +23,7 @@ const faqContent = [
 
 const FAQ = () => {
   return (
-<<<<<<< HEAD
     <StyledContainer paddingTop>
-=======
-    <StyledContainer>
->>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
       <Title>FAQ</Title>
       <StyledContainer noPadding noMargin>
         {faqContent.map(({ question, answer }) => (

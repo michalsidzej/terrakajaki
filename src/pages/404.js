@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import styled from 'styled-components'
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import Button from 'components/Button/Button'
@@ -31,13 +30,6 @@ const CantFind404 = () => (
       <Button to='/'>Wróć do strony głównej</Button>
     </Centerer>
     
-=======
-import MainTemplate from 'templates/MainTemplate/MainTemplate';
-
-const CantFind404 = () => (
-  <MainTemplate>
-    <h1>404</h1>
->>>>>>> 0dba97bea165e43e28b152cdaca28c074bdff696
   </MainTemplate>
 );
 
