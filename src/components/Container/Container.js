@@ -21,12 +21,12 @@ const StyledContainer = styled.div`
           align-items: center;
         `}
 
-      ${({ spaceEvenly }) =>
-        spaceEvenly &&
+      ${({ spaceBetween }) =>
+        spaceBetween &&
         css`
           ${({ theme }) => theme.media.tablet} {
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
           }
         `}
@@ -80,6 +80,7 @@ const StyledContainer = styled.div`
     css`
       position: relative;
     `}
+  
 `;
 
 export default StyledContainer;

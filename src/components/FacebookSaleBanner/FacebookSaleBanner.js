@@ -2,12 +2,12 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const BannerCaption = styled.div`
-  position: relative;
-  padding: .5rem 2rem;
+  display: none;
+  padding: .5rem 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.color.dark};
+  background-color: ${({ theme }) => theme.color.primary};
   ${({ theme }) => theme.media.tablet} {
-    padding: .5rem 0;
+   display: block;
   }
 `;
 
@@ -17,9 +17,8 @@ const Centerer = styled.div`
     css`
       ${({ theme }) => theme.media.tablet} {
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
+        align-items: center;
+        justify-content: center;
       }
     `}
   width: ${({ theme }) => theme.maxwidth};
@@ -29,17 +28,20 @@ const Centerer = styled.div`
 `;
 
 const StyledHeader = styled.h3`
-  color: ${({ theme }) => theme.color.light};
+  color: ${({ theme }) => theme.color.white};
 
   ${({ theme }) => theme.media.tablet} {
     font-size: 1.8rem;
   }
 `;
+const StyledLink = styled.a`
+  color: #c9c9c9;
+`
 
 const PresaleBanner = () => (
   <BannerCaption>
     <Centerer flex>
-      <StyledHeader>Zapraszamy do zamówień przez <a href='facebook.com/terrakajaki'>facebooka</a> lub maila <a href='mailto:info@terrakajaki.pl'>info@terrakajaki.pl</a> </StyledHeader>
+      <StyledHeader>Zapraszamy do zamówień przez <StyledLink href='facebook.com/terrakajaki'>facebooka</StyledLink> lub maila <StyledLink href='mailto:info@terrakajaki.pl'>info@terrakajaki.pl</StyledLink> </StyledHeader>
      </Centerer>
   </BannerCaption>
 );

@@ -20,7 +20,7 @@ const StyledContainer = styled.div`
   position: relative;
   ${({ theme }) => theme.media.tablet} {
     max-width: ${({ theme }) => theme.maxwidth};
-    padding: 2rem 0;
+    padding: 2rem; 
   }
 `;
 
@@ -219,7 +219,7 @@ const SingleProductTemplate = ({ pageContext }) => {
                 ))}
               </tbody>
             </DetailsTable>
-            <DetailsHeader> Zobacz inne kajaki w naszej ofercie</DetailsHeader>
+            <DetailsHeader> Zobacz Wszystkie kajaki w naszej ofercie</DetailsHeader>
             <ShopTemplate />
           </ProductDetails>
         </GridContainer>

@@ -9,6 +9,9 @@ const StyledList = styled.ul`
 `;
 const StyledListItem = styled.li`
   padding: 0.5rem 2rem;
+  &:last-child {
+    padding-right: 0;
+  }  
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -21,7 +24,7 @@ const StyledLink = styled(Link)`
 const Nav = () => (
   <StyledList>
     <StyledListItem>
-      <StyledLink to="/sklep/">Kajaki</StyledLink>
+      <StyledLink to="/sklep/">Sklep</StyledLink>
     </StyledListItem>
     <StyledListItem>
       <StyledLink to='/#about'>O nas</StyledLink>

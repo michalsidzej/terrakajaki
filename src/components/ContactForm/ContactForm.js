@@ -9,6 +9,7 @@ const FormWrapper = styled(StyledContainer)`
   ${({ theme }) => theme.media.tablet} {
     border-radius: 1rem;
     width: auto;
+    margin-right: 2rem;
   }
 `;
 const FormTitle = styled.h3`

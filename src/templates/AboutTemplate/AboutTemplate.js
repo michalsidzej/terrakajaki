@@ -13,7 +13,7 @@ const StyledParagraph = styled.p`
 const About = () => (
   <StyledContainer id='about' flex column paddingTop>
     <Title>Coś o nas</Title>
-    <StyledContainer noPadding noMargin flex spaceEvenly>
+    <StyledContainer noPadding noMargin flex spaceBetween>
       <StyledContainer noPadding noMargin widthAuto>
         <StyledParagraph>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

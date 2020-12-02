@@ -9,7 +9,7 @@ import Footer from 'components/Footer/Footer';
 const StyledMain = styled.main`
   padding-top: 6rem;
   ${theme.media.tablet} {
-    padding-top: 10rem;
+    padding-top: 7.6rem;
   }
 `;
 const MainTemplate = ({ children }) => (

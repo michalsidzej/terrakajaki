@@ -29,6 +29,7 @@ const Centerer = styled.div`
   width: ${({ theme }) => theme.maxwidth};
   max-width: 100%;
   margin: 0 auto;
+  padding: 0 2rem;
 
   :after {
     content: '-15%';

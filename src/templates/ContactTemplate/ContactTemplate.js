@@ -20,11 +20,13 @@ const Address = styled.address`
   margin-bottom: 1rem;
   font-style: normal;
 `;
-
+const StyledTitle = styled(Title)`
+  padding-left: 2rem;
+`
 const Contact = () => (
   <StyledContainer id='contact' noPadding paddingTop>
-    <Title contact>Kontakt</Title>
-    <StyledContainer flex noPadding noMargin spaceEvenly>
+    <StyledTitle contact>Kontakt</StyledTitle>
+    <StyledContainer flex noPadding noMargin spaceBetween>
       <StyledColumn>
         <StyledHeader>Dane kontaktowe</StyledHeader>
         <Address>
@@ -45,8 +47,9 @@ const Contact = () => (
           Ul. Krucza 4c <br />
           30-245 Kraków <br />
           NIP: 678 112 46 21 <br />
-          Regon: _______ <br />
-          Konto (zł): 
+          Konto (zł): 42 2490 0005 0000 4530 5842 5239 <br />
+          Konto (euro): 03 2490 0005 0000 4600 9434 9362 <br />
+
         </Address>
       </StyledColumn>
       <ContactForm />

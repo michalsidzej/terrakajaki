@@ -22,34 +22,26 @@ const StyledHeaderWrapper = styled.header`
 
   ${({ theme }) => theme.media.tablet} {
     flex-direction: column;
-    height: 10rem;
     padding: 0;
+    height: auto;
   }
 `;
 const HeaderTop = styled.div`
   ${({ theme }) => theme.media.tablet} {
-    height: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: ${({theme}) => theme.maxwidth};
+    padding: 0 2rem;
   }
 `;
-const MenuWrapper = styled.div`
-  display: none;
-  width: 100%;
-  height: 50%;
-  background-color: ${({ theme }) => theme.color.primary};
 
-  ${({ theme }) => theme.media.tablet} {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-`;
 const Menu = styled.nav`
-  width: ${({ theme }) => theme.maxwidth};
-  max-width: 100%;
-  color: ${({ theme }) => theme.color.white};
+  display: none;
+  ${({theme}) => theme.media.tablet} {
+    display: block;
+  }
+  color: ${({ theme }) => theme.color.primary};
   font-size: 2rem;
 `;
 
@@ -61,22 +53,23 @@ const Header = () => {
   };
 
   return (
+    <>
     <StyledHeaderWrapper>
-      <FacebookSaleBanner />
       <HeaderTop>
         <Link to="/">
           <Logo />
         </Link>
-      </HeaderTop>  
-      <MenuWrapper>
         <Menu>
           <Nav />
         </Menu>
-      </MenuWrapper>
+      </HeaderTop>  
+      <FacebookSaleBanner />
       <Hamburger onClick={toggleMobileMenu} isOpen={isMenuOpen} />
       <MobileMenu isOpen={isMenuOpen} />
 
     </StyledHeaderWrapper> 
+
+    </>
   );
 };
 
