@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from 'components/Title/Title';
 import StyledContainer from 'components/Container/Container';
-import ContactForm from 'components/ContactForm/ContactForm';
+// import ContactForm from 'components/ContactForm/ContactForm';
 
 const StyledHeader = styled.h3`
   font-size: ${({ theme }) => theme.font.size.s};
@@ -52,7 +52,7 @@ const Contact = () => (
 
         </Address>
       </StyledColumn>
-      <ContactForm />
+      { /* <ContactForm /> */}
     </StyledContainer>
   </StyledContainer>
 );

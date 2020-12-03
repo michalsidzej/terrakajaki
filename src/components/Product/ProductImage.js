@@ -6,6 +6,10 @@ import Img from 'gatsby-image';
 const StyledFigure = styled.div`
   position: relative;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   ${({discount}) => discount && css`
   ::after {
     content:'-15%';
@@ -19,14 +23,35 @@ const StyledFigure = styled.div`
   `}
 `;
 
-const StyledImage = styled(Img)`
+const RatioWrapper = styled.figure`
   width: 100%;
-  height: auto;
-`;
+  padding-bottom: 150%;
+`
 
 const ProductImage = ({ fluid }) => (
   <StyledFigure discount>
-    <StyledImage fluid={fluid} />
+    <RatioWrapper>
+    <Img 
+        fluid={fluid}
+        style={{
+          position: `absolute`,
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0, 
+          display: `flex`,
+          justifyContent: `center`
+        }}
+        imgStyle={{
+          height: `100%`,
+          width: `auto`,
+          margin: `0 auto`,
+          left: 0,
+          right: 0
+        }}
+      />  
+  </RatioWrapper>
+      
   </StyledFigure>
 );
 

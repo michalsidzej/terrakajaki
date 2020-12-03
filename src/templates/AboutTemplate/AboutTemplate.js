@@ -5,6 +5,7 @@ import StyledContainer from 'components/Container/Container';
 import AboutImage from 'components/AboutImage/AboutImage';
 
 const StyledParagraph = styled.p`
+  text-align: justify;
   ${({ theme }) => theme.media.tablet} {
     width: 40rem;
   }
@@ -16,11 +17,11 @@ const About = () => (
     <StyledContainer noPadding noMargin flex spaceBetween>
       <StyledContainer noPadding noMargin widthAuto>
         <StyledParagraph>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
-          felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-          consequat massa quis enim.
+          Kajakarstwo to nasza wieloletnia, najważniejsza pasja. Większość wolnego czasu spędzamy na wodzie. Nasze doświadczenie to prawie 80 lat wspólnego i indywidualnego pływania po rzekach górskich i nizinnych, startów w zawodach w kajakarstwie płaskim i freestyle, pokonywania rzek w Afryce, Himalajach, obydwu Amerykach i Europie.
+        </StyledParagraph> 
+        <br />
+        <StyledParagraph>
+          Postanowiliśmy wykorzystać swoją wiedzę i zdobyte doświadczenie w rodzinnej firmie zajmującej się tym co kochamy.
         </StyledParagraph>
       </StyledContainer>
 

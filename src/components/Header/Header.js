@@ -32,7 +32,7 @@ const HeaderTop = styled.div`
     align-items: center;
     justify-content: space-between;
     width: ${({theme}) => theme.maxwidth};
-    padding: 0 2rem;
+    padding: 1rem 2rem;
   }
 `;
 

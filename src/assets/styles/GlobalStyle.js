@@ -49,6 +49,9 @@ const GlobalStyle = createGlobalStyle`
   font-weight: 600;
   color: #041C33;
   text-decoration: none;
+  :hover {
+    text-decoration: underline;
+  }
   }
   img {
   max-width: 100%;

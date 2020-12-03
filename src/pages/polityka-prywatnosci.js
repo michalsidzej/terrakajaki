@@ -4,8 +4,9 @@ import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import StyledContainer from 'components/Container/Container';
 
 const Container = styled(StyledContainer)`
-  max-width: 700px;
+  width: 700px;
   padding: 6rem 0;
+  margin: 0 auto;
 `;
 
 const StyledTitle = styled.h1`

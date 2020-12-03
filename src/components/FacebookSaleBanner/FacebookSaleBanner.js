@@ -41,7 +41,7 @@ const StyledLink = styled.a`
 const PresaleBanner = () => (
   <BannerCaption>
     <Centerer flex>
-      <StyledHeader>Zapraszamy do zamówień przez <StyledLink href='facebook.com/terrakajaki'>facebooka</StyledLink> lub maila <StyledLink href='mailto:info@terrakajaki.pl'>info@terrakajaki.pl</StyledLink> </StyledHeader>
+      <StyledHeader>Zapraszamy do zamówień przez <StyledLink href='https://facebook.com/terrakajaki'>facebooka</StyledLink> lub maila <StyledLink href='mailto:info@terrakajaki.pl'>info@terrakajaki.pl</StyledLink> </StyledHeader>
      </Centerer>
   </BannerCaption>
 );

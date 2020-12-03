@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainTemplate from 'templates/MainTemplate/MainTemplate'
-import StyledContainer from 'components/Container/Container'
-import Button from 'components/Button/Button'
+import {StyledButton} from 'components/Button/Button'
 
-const Container = styled(StyledContainer)`
-  max-width: 700px;
+const Container = styled.div`
+  width: 700px;
   padding: 6rem 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const StyledTitle = styled.h1`
@@ -25,8 +28,8 @@ const StyledStrong = styled.strong`
   font-weight: 600;
 `;
 
-const StyledButton = styled(Button)`
-  margin: 0 auto;
+const Button = styled(StyledButton)`
+  margin: 1rem;
 `
 
 const Presale = () => (
@@ -50,7 +53,7 @@ const Presale = () => (
         <StyledParagraph>
           Jeżeli nie uda Ci się zamówić w tym terminie, nie martw się! <StyledStrong>Do 15 stycznia</StyledStrong> możesz zarezerwować jeden z zamówionych przez nas kajaków. W zamian za przedpłatę damy Ci <StyledStrong>10% zniżki!</StyledStrong>
         </StyledParagraph>
-        <StyledButton to='sklep'>Wróć do sklepu</StyledButton>
+        <Button to='/sklep/'>Wróć do sklepu</Button>
         <StyledParagraph>
           PS Tak, w naszym sklepie będą też sprzedawane kajaki firmy Spade, pojawią się niedługo. 
         </StyledParagraph>

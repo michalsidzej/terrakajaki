@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-terrakajaki",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Strona sklepu internetowego firmy Terrakajaki",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Michal Sobieraj-Jakubiec <michalsidzej@gmail.com>",
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "^2.25.3",

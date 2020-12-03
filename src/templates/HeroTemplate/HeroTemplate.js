@@ -34,6 +34,7 @@ const HeroCaption = styled.div`
 
 const HeroCaptionText = styled.div`
   width: ${({ theme }) => theme.maxwidth};
+  padding: 2rem;
   max-width: 100%;
 `;
 
@@ -55,7 +56,7 @@ const Hero = ({ fileName, alt }) => (
     <HeroImageWrapper>
       <HeroImage fileName={fileName} alt={alt} />
       <HeroCaption>
-        <HeroCaptionText>
+        <HeroCaptionText>   
           <StyledHeader>Mamy fajne kajaki</StyledHeader>
           <Button to="/sklep/"> Zobacz </Button>
         </HeroCaptionText>

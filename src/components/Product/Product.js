@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ProductImage from 'components/Product/ProductImage';
 import { Link } from 'gatsby';
 
+
 const StyledSingleProduct = styled(Link)`
   text-decoration: none;
   color: initial;
@@ -30,7 +31,10 @@ const SingleProduct = ({ brand, name, price, shortDetails, fluid, slug }) => {
   const path = `/kayaks/${slug}`;
   return (
     <StyledSingleProduct to={path}>
-      <ProductImage fluid={fluid}/>
+      <ProductImage 
+        fluid={fluid}
+        
+      />
       <ProductSummary>
         <ProductName>
           {brand.map(({ brandName }) => `${brandName}`).join(' ')} {name}{' '}

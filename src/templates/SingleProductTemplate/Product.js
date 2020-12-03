@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import { StyledButton } from 'components/Button/Button';
 import Img from 'gatsby-image';
 import PresaleBanner from 'components/PresaleBanner/PresaleBanner';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
@@ -40,6 +39,14 @@ const ProductMedia = styled.div`
     margin-right: auto;
   }
 `;
+const InfoWrapper = styled.div`
+  ${({theme}) => theme.media.tablet} {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+`
 const ProductInfo = styled.div`
   position: static;
   ${({ theme }) => theme.media.tablet} {
@@ -47,8 +54,8 @@ const ProductInfo = styled.div`
     top: 12rem;
     padding: 2rem 0;
     width: 100%;
-    max-height: 400px;
     border-radius: 1rem;
+    height: auto;
   }
 `;
 
@@ -108,6 +115,16 @@ const CrossOut = styled.span`
 const Discount = styled.span`
   color: #db2100;
 `;
+
+const StyledHeader = styled.h3`
+
+  ${({ theme }) => theme.media.tablet} {
+    font-size: 1.8rem;
+  }
+`;
+const StyledLink = styled.a`
+  color: ${({theme}) => theme.color.primary};
+`
 
 const SingleProductTemplate = ({ pageContext }) => {
   const { allContentfulProduct } = useStaticQuery(graphql`
@@ -184,6 +201,7 @@ const SingleProductTemplate = ({ pageContext }) => {
               <ProductImage fluid={mainImage.fluid} />
             </Gallery>
           </ProductMedia>
+          <InfoWrapper>
           <ProductInfo>
             {brand.map(({ logo }) => (
               <>
@@ -201,9 +219,10 @@ const SingleProductTemplate = ({ pageContext }) => {
             </InfoHeader>
             <InfoHeader2>Dostępne kolory:</InfoHeader2>
             <Colors />
-
-            <StyledButton>Kup Teraz</StyledButton>
+            <StyledHeader>Zapraszamy do zamówień przez <StyledLink href='https://facebook.com/terrakajaki'>facebooka</StyledLink> lub maila <StyledLink href='mailto:info@terrakajaki.pl'>info@terrakajaki.pl</StyledLink> 
+            </StyledHeader>   
           </ProductInfo>
+          </InfoWrapper>  
           <ProductDetails>
             <DetailsHeader>{shortDescription}</DetailsHeader>
 
@@ -219,7 +238,7 @@ const SingleProductTemplate = ({ pageContext }) => {
                 ))}
               </tbody>
             </DetailsTable>
-            <DetailsHeader> Zobacz Wszystkie kajaki w naszej ofercie</DetailsHeader>
+            <DetailsHeader> Zobacz wszystkie kajaki w naszej ofercie</DetailsHeader>
             <ShopTemplate />
           </ProductDetails>
         </GridContainer>

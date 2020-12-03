@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
-import StyledContainer from 'components/Container/Container';
 
-const Container = styled(StyledContainer)`
+const Container = styled.section`
   max-width: 700px;
   padding: 6rem 0;
+  margin: 0 auto; 
 `;
 
 const StyledTitle = styled.h1`

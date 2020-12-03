@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import Button from 'components/Button/Button'
 
+
 const Centerer = styled.div`
   display: flex;
   flex-direction: column;

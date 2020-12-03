@@ -15,10 +15,11 @@ const StyledListItem = styled.li`
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: inherit;
+  color: ${({theme}) => theme.color.black};
   text-transform: uppercase;
   &:hover, &:active {
-    color: ${({ theme }) => theme.color.secondary};
+    color: ${({ theme }) => theme.color.primary};
+    
   }
 `;
 const Nav = () => (
