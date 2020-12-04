@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     scroll-padding-top: 7.9rem;
     @media (min-width: 728px) {
-      scroll-padding-top: 9.9rem;
+      scroll-padding-top: 8.9rem;
     }
   }
 

@@ -33,7 +33,7 @@ const HeaderTop = styled.div`
   ${({ theme }) => theme.media.tablet} {
     grid-template-columns: auto 40rem;
     max-width: ${({theme}) => theme.maxwidth};
-    padding: 1rem 0;
+    padding: .5rem 0;
   }
 `;
 

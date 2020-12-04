@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import PresaleBanner from 'components/PresaleBanner/PresaleBanner';
@@ -51,8 +51,8 @@ const ProductInfo = styled.div`
   position: static;
   ${({ theme }) => theme.media.tablet} {
     position: sticky;
-    top: 12rem;
-    padding: 2rem 0;
+    top: 11rem;
+    padding: 1rem;
     width: 100%;
     border-radius: 1rem;
     height: auto;
@@ -78,6 +78,9 @@ const InfoHeader = styled.h2`
 const InfoHeader2 = styled.h3`
   padding: 0;
 `;
+const InfoDetails = styled.p`
+
+`
 const DetailsHeader = styled.h2`
   padding: 2rem 0;
 `;
@@ -108,6 +111,10 @@ const ProductImage = styled(Img)`
   width: 100%;
   height: auto;
 `;
+const Price = styled.h2`
+  font-size: 2.2rem;
+  padding: 1rem 0;
+`
 const CrossOut = styled.span`
   text-decoration: line-through;
   margin-right: 0.5rem;
@@ -125,6 +132,9 @@ const StyledHeader = styled.h3`
 const StyledLink = styled.a`
   color: ${({theme}) => theme.color.primary};
 `
+const ColoredLink = styled(Link)`
+  color: ${({theme}) => theme.color.primary};
+` 
 
 const SingleProductTemplate = ({ pageContext }) => {
   const { allContentfulProduct } = useStaticQuery(graphql`
@@ -213,12 +223,15 @@ const SingleProductTemplate = ({ pageContext }) => {
               {brand.map(({ brandName }) => `${brandName}`).join(' ')}{' '}
               {productName}
             </InfoHeader>
-            <InfoHeader>
-              <CrossOut>{price} zł</CrossOut>{' '}
-              <Discount>{price * 0.85} zł</Discount>
-            </InfoHeader>
-            <InfoHeader2>Dostępne kolory:</InfoHeader2>
-            <Colors />
+
+            <Price>
+              <StyledHeader>
+                <ColoredLink to='/przedsprzedaz/'>Przedsprzedaż!</ColoredLink>
+              </StyledHeader>
+              <CrossOut>{price}&nbsp;zł</CrossOut>&nbsp;
+              <Discount>{price * 0.85}&nbsp;zł*</Discount>
+            </Price>
+            <InfoDetails>Warunki promocji: </InfoDetails>
             <StyledHeader>Zapraszamy do zamówień przez <StyledLink href='https://facebook.com/terrakajaki'>facebooka</StyledLink> lub maila <StyledLink href='mailto:info@terrakajaki.pl'>info@terrakajaki.pl</StyledLink> 
             </StyledHeader>   
           </ProductInfo>
@@ -227,6 +240,10 @@ const SingleProductTemplate = ({ pageContext }) => {
             <DetailsHeader>{shortDescription}</DetailsHeader>
 
             <DetailsParagraph>{description.description}</DetailsParagraph>
+
+            <DetailsHeader>Dostępne kolory:</DetailsHeader>
+            <Colors />
+
             <DetailsHeader>Specyfikacja techniczna</DetailsHeader>
             <DetailsTable>
               <tbody>
@@ -238,7 +255,9 @@ const SingleProductTemplate = ({ pageContext }) => {
                 ))}
               </tbody>
             </DetailsTable>
-            <DetailsHeader>Masz pytanie o kajak? Zadzwoń <StyledLink href='tal:+48 695 283 124'>+48 695 283 124</StyledLink></DetailsHeader>
+            <DetailsHeader>Masz pytanie o kajak? <br />
+            Zadzwoń <StyledLink href='tal:+48 695 283 124'>+48 695 283 124</StyledLink>
+            </DetailsHeader>
             <DetailsHeader> Zobacz wszystkie kajaki w naszej ofercie</DetailsHeader>
             <ShopTemplate />
           </ProductDetails>

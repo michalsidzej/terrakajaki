@@ -1,6 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+const ColorsWrapper = styled.div`
+
+`
 const Color = styled.div`
   display: inline-block;
   margin: 0.5rem;
@@ -54,7 +57,7 @@ const Color = styled.div`
 `;
 
 const Colors = () => (
-  <>
+  <ColorsWrapper>
     <Color blue />
     <Color blueTiger />
     <Color green />
@@ -64,7 +67,7 @@ const Colors = () => (
     <Color fire />
     <Color pink />
     <Color yellow />
-  </>
+  </ColorsWrapper>
 );
 
 export default Colors;
