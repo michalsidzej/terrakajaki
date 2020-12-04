@@ -12,10 +12,10 @@ const StyledParagraph = styled.p`
 `;
 
 const About = () => (
-  <StyledContainer id='about' flex column paddingTop>
+  <StyledContainer id='about' flex column>
     <Title>Coś o nas</Title>
     <StyledContainer noPadding noMargin flex spaceBetween>
-      <StyledContainer noPadding noMargin widthAuto>
+      <StyledContainer noPadding noMargin noPaddingy widthAuto>
         <StyledParagraph>
           Kajakarstwo to nasza wieloletnia, najważniejsza pasja. Większość wolnego czasu spędzamy na wodzie. Nasze doświadczenie to prawie 80 lat wspólnego i indywidualnego pływania po rzekach górskich i nizinnych, startów w zawodach w kajakarstwie płaskim i freestyle, pokonywania rzek w Afryce, Himalajach, obydwu Amerykach i Europie.
         </StyledParagraph> 

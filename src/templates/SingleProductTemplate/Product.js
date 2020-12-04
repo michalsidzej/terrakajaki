@@ -238,6 +238,7 @@ const SingleProductTemplate = ({ pageContext }) => {
                 ))}
               </tbody>
             </DetailsTable>
+            <DetailsHeader>Masz pytanie o kajak? Zadzwoń <StyledLink href='tal:+48 695 283 124'>+48 695 283 124</StyledLink></DetailsHeader>
             <DetailsHeader> Zobacz wszystkie kajaki w naszej ofercie</DetailsHeader>
             <ShopTemplate />
           </ProductDetails>

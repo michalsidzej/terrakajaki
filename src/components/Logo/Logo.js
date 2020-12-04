@@ -4,7 +4,7 @@ import Icon from 'components/Icon/Icon';
 import logoImg from 'assets/images/terrakajaki-logo.svg';
 
 const StyledWrapper = styled.div`
-  width: 23rem;
+  width: 22rem;
 `;
 
 const Logo = () => (

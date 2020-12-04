@@ -56,10 +56,17 @@ const StyledContainer = styled.div`
       padding-left: 0;
       padding-right: 0;
     `}
-  
+
+    ${({ noPaddingy }) =>
+    noPaddingy &&
+    css`
+      padding-top: 0;
+      padding-bottom: 0;
+    `}
   ${({ paddingTop }) =>
     paddingTop &&
     css`
+      padding-top: 7rem;
       ${({ theme }) => theme.media.tablet} {
         padding-top:10rem;
     } 

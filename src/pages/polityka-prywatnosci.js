@@ -3,10 +3,19 @@ import styled from 'styled-components';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import StyledContainer from 'components/Container/Container';
 
-const Container = styled(StyledContainer)`
-  width: 700px;
-  padding: 6rem 0;
-  margin: 0 auto;
+const Container = styled.section`
+  width: 100%;
+  max-width: 700px;
+  padding: 6rem 2rem;
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ${({theme}) => theme.media.tablet} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 const StyledTitle = styled.h1`

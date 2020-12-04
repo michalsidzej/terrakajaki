@@ -21,13 +21,18 @@ const Address = styled.address`
   font-style: normal;
 `;
 const StyledTitle = styled(Title)`
+${({theme}) => theme.media.tablet} {
   padding-left: 2rem;
+}
 `
+const StyledH2 = styled.h2`
+  padding: 1rem 0;
+`;
 const Contact = () => (
-  <StyledContainer id='contact' noPadding paddingTop>
+  <StyledContainer id='contact' noPadding>
     <StyledTitle contact>Kontakt</StyledTitle>
-    <StyledContainer flex noPadding noMargin spaceBetween>
-      <StyledColumn>
+    <StyledContainer flex noPadding noMargin noPaddingy spaceBetween>
+      <StyledColumn>      
         <StyledHeader>Dane kontaktowe</StyledHeader>
         <Address>
           Terra Tomasz Jakubiec <br />
@@ -37,8 +42,8 @@ const Contact = () => (
           </StyledLink>{' '}
           <br />
           email:{' '}
-          <StyledLink href="mailto:tomanek@terrakajaki.pl">
-            tomanek@terrakajaki.pl
+          <StyledLink href="mailto:info@terrakajaki.pl">
+            info@terrakajaki.pl
           </StyledLink>{' '}
           <br />
         </Address>

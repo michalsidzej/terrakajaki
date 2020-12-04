@@ -3,14 +3,21 @@ import styled from 'styled-components';
 import MainTemplate from 'templates/MainTemplate/MainTemplate'
 import {StyledButton} from 'components/Button/Button'
 
-const Container = styled.div`
-  width: 700px;
-  padding: 6rem 0;
-  margin: 0 auto;
+
+const Container = styled.section`
+  width: 100%;
+  max-width: 700px;
+  padding: 2rem;
+  margin: 0 auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${({theme}) => theme.media.tablet} {
+    padding: 6rem 0;
+  }
 `;
+
 
 const StyledTitle = styled.h1`
   padding: 2rem;

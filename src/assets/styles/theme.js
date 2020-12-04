@@ -1,6 +1,7 @@
 const theme = {
   color: {
     white: '#ffffff',
+    black: '#000000',
     primary: '#046464',
     secondary: '#2CBBDA',
     dark: '#041C33',

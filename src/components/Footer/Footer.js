@@ -41,7 +41,7 @@ const FooterLink = styled(Link)`
   text-decoration: none;
   position: relative;
 
-  :after {
+  /*:after {
     content: '';
     width: 100%;
     height: 2px;
@@ -54,7 +54,7 @@ const FooterLink = styled(Link)`
   }
   &:hover :after {
     opacity: 1;
-  }
+  } */
 `;
 
 const FooterParagraph = styled.p`

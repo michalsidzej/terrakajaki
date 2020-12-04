@@ -3,9 +3,18 @@ import styled from 'styled-components';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 
 const Container = styled.section`
+  width: 100%;
   max-width: 700px;
-  padding: 6rem 0;
+  padding: 4rem 2rem;
   margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ${({theme}) => theme.media.tablet} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 const StyledTitle = styled.h1`

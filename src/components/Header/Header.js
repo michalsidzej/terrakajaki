@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Logo from 'components/Logo/Logo';
+/*
 import Hamburger from 'components/Hamburger/Hamburger';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
+*/
 import Nav from 'components/Nav/Nav';
 import FacebookSaleBanner from 'components/FacebookSaleBanner/FacebookSaleBanner'
 
 const StyledHeaderWrapper = styled.header`
-  height: 6rem;
   width: 100%;
-  padding: 0.75rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,45 +27,53 @@ const StyledHeaderWrapper = styled.header`
   }
 `;
 const HeaderTop = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: center;
   ${({ theme }) => theme.media.tablet} {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: ${({theme}) => theme.maxwidth};
-    padding: 1rem 2rem;
+    grid-template-columns: auto 40rem;
+    max-width: ${({theme}) => theme.maxwidth};
+    padding: 1rem 0;
   }
 `;
 
 const Menu = styled.nav`
-  display: none;
+  background-color: ${({ theme }) => theme.color.primary};
   ${({theme}) => theme.media.tablet} {
-    display: block;
+    background-color: initial;
   }
-  color: ${({ theme }) => theme.color.primary};
-  font-size: 2rem;
 `;
+const StyledLink = styled(Link)`
+  padding: .5rem 2rem;
+  justify-self: center;
+  ${({theme}) => theme.media.tablet} {
+    justify-self: start;
+  }
+`
 
 const Header = () => {
+  /*
   const [isMenuOpen, setMenuState] = useState(false);
 
   const toggleMobileMenu = () => {
     setMenuState(!isMenuOpen);
-  };
+  }; 
+  */
 
   return (
     <>
     <StyledHeaderWrapper>
       <HeaderTop>
-        <Link to="/">
+        <StyledLink to="/">
           <Logo />
-        </Link>
+        </StyledLink>
         <Menu>
           <Nav />
         </Menu>
       </HeaderTop>  
       <FacebookSaleBanner />
-      <Hamburger onClick={toggleMobileMenu} isOpen={isMenuOpen} />
-      <MobileMenu isOpen={isMenuOpen} />
+      {/* <Hamburger onClick={toggleMobileMenu} isOpen={isMenuOpen} />
+      <MobileMenu isOpen={isMenuOpen} /> */}
 
     </StyledHeaderWrapper> 
 

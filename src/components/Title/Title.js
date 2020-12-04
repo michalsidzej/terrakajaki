@@ -5,8 +5,6 @@ const Title = styled.h1`
   font-size: ${({ theme }) => theme.font.size.l};
   font-weight: ${({ theme }) => theme.font.weight.bold};
   line-height: 6.4rem;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
   ::after {
     content: '';
     height: 0.4rem;
