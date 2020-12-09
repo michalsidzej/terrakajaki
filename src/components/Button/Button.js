@@ -18,14 +18,17 @@ const StyledButton = styled(Link)`
   text-decoration: none;
   &:focus {
     outline: none;
+    text-decoration: none;
   }
   &:hover {
     background-color: ${({ theme }) => theme.color.medium};
     cursor: pointer;
+    text-decoration: none;
   }
   &:active {
     transform: scale(0.95);
     border: none;
+    text-decoration: none;
   }
 `;
 

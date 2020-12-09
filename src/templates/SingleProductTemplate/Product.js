@@ -19,7 +19,7 @@ const StyledContainer = styled.div`
   position: relative;
   ${({ theme }) => theme.media.tablet} {
     max-width: ${({ theme }) => theme.maxwidth};
-    padding: 2rem; 
+    padding: 2rem;
   }
 `;
 
@@ -40,13 +40,13 @@ const ProductMedia = styled.div`
   }
 `;
 const InfoWrapper = styled.div`
-  ${({theme}) => theme.media.tablet} {
+  ${({ theme }) => theme.media.tablet} {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
   }
-`
+`;
 const ProductInfo = styled.div`
   position: static;
   ${({ theme }) => theme.media.tablet} {
@@ -69,18 +69,13 @@ const Gallery = styled.div`
   display: grid;
   grid-gap: 20px;
   ${({ theme }) => theme.media.tablet} {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 `;
 const InfoHeader = styled.h2`
   padding: 0;
 `;
-const InfoHeader2 = styled.h3`
-  padding: 0;
-`;
-const InfoDetails = styled.p`
 
-`
 const DetailsHeader = styled.h2`
   padding: 2rem 0;
 `;
@@ -114,7 +109,7 @@ const ProductImage = styled(Img)`
 const Price = styled.h2`
   font-size: 2.2rem;
   padding: 1rem 0;
-`
+`;
 const CrossOut = styled.span`
   text-decoration: line-through;
   margin-right: 0.5rem;
@@ -124,17 +119,16 @@ const Discount = styled.span`
 `;
 
 const StyledHeader = styled.h3`
-
   ${({ theme }) => theme.media.tablet} {
     font-size: 1.8rem;
   }
 `;
 const StyledLink = styled.a`
-  color: ${({theme}) => theme.color.primary};
-`
+  color: ${({ theme }) => theme.color.primary};
+`;
 const ColoredLink = styled(Link)`
-  color: ${({theme}) => theme.color.primary};
-` 
+  color: ${({ theme }) => theme.color.primary};
+`;
 
 const SingleProductTemplate = ({ pageContext }) => {
   const { allContentfulProduct } = useStaticQuery(graphql`
@@ -212,30 +206,37 @@ const SingleProductTemplate = ({ pageContext }) => {
             </Gallery>
           </ProductMedia>
           <InfoWrapper>
-          <ProductInfo>
-            {brand.map(({ logo }) => (
-              <>
-                <Img fixed={logo.fixed} />
-              </>
-            ))}
+            <ProductInfo>
+              {brand.map(({ logo }) => (
+                <>
+                  <Img fixed={logo.fixed} />
+                </>
+              ))}
 
-            <InfoHeader>
-              {brand.map(({ brandName }) => `${brandName}`).join(' ')}{' '}
-              {productName}
-            </InfoHeader>
+              <InfoHeader>
+                {brand.map(({ brandName }) => `${brandName}`).join(' ')}{' '}
+                {productName}
+              </InfoHeader>
 
-            <Price>
+              <Price>
+                <StyledHeader>
+                  <ColoredLink to="/przedsprzedaz/">Przedsprzedaż!</ColoredLink>
+                </StyledHeader>
+                <CrossOut>{price}&nbsp;zł</CrossOut>&nbsp;
+                <Discount>{price * 0.85}&nbsp;zł*</Discount>
+              </Price>
               <StyledHeader>
-                <ColoredLink to='/przedsprzedaz/'>Przedsprzedaż!</ColoredLink>
+                Zapraszamy do zamówień przez{' '}
+                <StyledLink href="https://facebook.com/terrakajaki">
+                  facebooka
+                </StyledLink>{' '}
+                lub maila{' '}
+                <StyledLink href="mailto:info@terrakajaki.pl">
+                  info@terrakajaki.pl
+                </StyledLink>
               </StyledHeader>
-              <CrossOut>{price}&nbsp;zł</CrossOut>&nbsp;
-              <Discount>{price * 0.85}&nbsp;zł*</Discount>
-            </Price>
-            <InfoDetails>Warunki promocji: </InfoDetails>
-            <StyledHeader>Zapraszamy do zamówień przez <StyledLink href='https://facebook.com/terrakajaki'>facebooka</StyledLink> lub maila <StyledLink href='mailto:info@terrakajaki.pl'>info@terrakajaki.pl</StyledLink> 
-            </StyledHeader>   
-          </ProductInfo>
-          </InfoWrapper>  
+            </ProductInfo>
+          </InfoWrapper>
           <ProductDetails>
             <DetailsHeader>{shortDescription}</DetailsHeader>
 
@@ -255,10 +256,17 @@ const SingleProductTemplate = ({ pageContext }) => {
                 ))}
               </tbody>
             </DetailsTable>
-            <DetailsHeader>Masz pytanie o kajak? <br />
-            Zadzwoń <StyledLink href='tal:+48 695 283 124'>+48 695 283 124</StyledLink>
+            <DetailsHeader>
+              Masz pytanie o kajak? <br />
+              Zadzwoń{' '}
+              <StyledLink href="tal:+48 695 283 124">
+                +48 695 283 124
+              </StyledLink>
             </DetailsHeader>
-            <DetailsHeader> Zobacz wszystkie kajaki w naszej ofercie</DetailsHeader>
+            <DetailsHeader>
+              {' '}
+              Zobacz wszystkie kajaki w naszej ofercie
+            </DetailsHeader>
             <ShopTemplate />
           </ProductDetails>
         </GridContainer>

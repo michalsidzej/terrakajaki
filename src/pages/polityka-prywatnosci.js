@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
-import StyledContainer from 'components/Container/Container';
 
 const Container = styled.section`
   width: 100%;
   max-width: 700px;
   padding: 6rem 2rem;
-  margin: 0 auto; 
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  ${({theme}) => theme.media.tablet} {
+  ${({ theme }) => theme.media.tablet} {
     padding-left: 0;
     padding-right: 0;
   }
@@ -67,8 +66,8 @@ const CookiesPolicy = () => (
       <StyledParagraph>
         Zapisujemy adres e-mail za pomocą{' '}
         <StyledStrong>formularzu kontaktowego</StyledStrong> w zakładce
-        &quotKontakt&quot lub &quotZapytaj o produkt&quot. Korzystamy z niego
-        wyłącznie w celu zwrotnego kontaktu i udzielenia odpowiedzi.
+        &quot;Kontakt&quot; lub &quot;Zapytaj o produkt&quot;. Korzystamy z
+        niego wyłącznie w celu zwrotnego kontaktu i udzielenia odpowiedzi.
       </StyledParagraph>
       <StyledParagraph>
         Zapisujemy imię i nazwisko, adres e-mail, numer telefonu oraz dane

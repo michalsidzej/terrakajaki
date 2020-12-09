@@ -59,6 +59,16 @@ const ShopTemplate = () => {
   `);
 
   const { nodes } = allContentfulProduct;
+  function compare(a, b) {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  }
+  const sortedNodes = nodes.sort(compare);
   return (
     <>
       {/*
@@ -76,7 +86,7 @@ const ShopTemplate = () => {
       */}
 
       <ProductsList>
-        {nodes.map(
+        {sortedNodes.map(
           ({
             id,
             slug,
@@ -88,7 +98,7 @@ const ShopTemplate = () => {
           }) => (
             <>
               <SingleProduct
-                key={id}
+                key={id.toString()}
                 slug={slug}
                 name={productName}
                 price={price}

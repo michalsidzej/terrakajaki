@@ -78,7 +78,7 @@ module.exports = {
         background_color: `#046464`,
         theme_color: `#046464`,
         display: `minimal-ui`,
-        icon: `src/assets/images/rexy-favicon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/terra-favicon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -9,54 +9,58 @@ const StyledFigure = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  ${({discount}) => discount && css`
-  ::after {
-    content:'-15%';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    /*background-color: ${({theme}) => theme.color.light}; */
-    color: ${({theme}) => theme.color.red};
-  }
-  `}
+
+  ${({ discount }) =>
+    discount &&
+    css`
+      ::after {
+        content: '-15%';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        /*background-color: ${({ theme }) => theme.color.light}; */
+        color: ${({ theme }) => theme.color.red};
+      }
+    `}
 `;
 
 const RatioWrapper = styled.figure`
   width: 100%;
-  padding-bottom: 150%;
-`
+  padding-bottom: 100%;
+`;
 
 const ProductImage = ({ fluid }) => (
   <StyledFigure discount>
     <RatioWrapper>
-    <Img 
+      <Img
         fluid={fluid}
         style={{
           position: `absolute`,
           top: 0,
           bottom: 0,
           left: 0,
-          right: 0, 
+          right: 0,
           display: `flex`,
-          justifyContent: `center`
+          justifyContent: `center`,
         }}
         imgStyle={{
-          height: `100%`,
-          width: `auto`,
-          margin: `0 auto`,
-          left: 0,
-          right: 0
+          height: `auto`,
+          width: `100%`,
+          margin: `auto 0`,
+          top: 0,
+          bottom: 0,
         }}
-      />  
-  </RatioWrapper>
-      
+      />
+    </RatioWrapper>
   </StyledFigure>
 );
 
 ProductImage.propTypes = {
-  fluid: PropTypes.oneOfType([Object, PropTypes.arrayOf(Object)]).isRequired,
+  fluid: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]).isRequired,
 };
 
 export default ProductImage;
