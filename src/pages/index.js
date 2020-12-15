@@ -4,6 +4,7 @@ import Hero from 'templates/HeroTemplate/HeroTemplate';
 import About from 'templates/AboutTemplate/AboutTemplate';
 import Contact from 'templates/ContactTemplate/ContactTemplate';
 import SEO from 'components/SEO/SEO';
+import PresaleBanner from 'components/PresaleBanner/PresaleBanner';
 
 const IndexPage = () => (
   <MainTemplate>
@@ -18,6 +19,7 @@ const IndexPage = () => (
       button="Zobacz"
       to="/sklep/"
     />
+    <PresaleBanner />
     <Hero
       fileName="hero-2.jpg"
       alt="Quim Fontane skacze w kajaku"

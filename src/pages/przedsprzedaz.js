@@ -53,9 +53,10 @@ const Presale = () => (
       <StyledH2>Jak to działa?</StyledH2>
       <StyledParagraph>
         Z okazji otwarcia działalności Terra Kajaki przygotowaliśmy specjalną
-        ofertę. Jeżeli dokonasz przedpłaty za wybrany kajak do 31.12, otrzymasz
-        15% zniżki. Dodatkowo będziesz miał możliwość wyboru dowolnego koloru z
-        dostępnych u producenta, oraz{' '}
+        ofertę. Jeżeli dokonasz przedpłaty za wybrany kajak do{' '}
+        <styledStrog>31 grudnia,</styledStrog> otrzymasz 15% zniżki. Dodatkowo
+        będziesz miał możliwość wyboru dowolnego koloru z dostępnych u
+        producenta, oraz{' '}
         <styledStrog>gwarancję terminu odbioru na 15 lutego 2021.</styledStrog>
       </StyledParagraph>
 
@@ -68,10 +69,6 @@ const Presale = () => (
         </StyledStrong>
       </StyledParagraph>
       <Button to="/sklep/">Wróć do sklepu</Button>
-      <StyledParagraph>
-        PS Tak, w naszym sklepie będą też sprzedawane kajaki firmy Spade,
-        pojawią się niedługo.
-      </StyledParagraph>
     </Container>
   </MainTemplate>
 );
