@@ -8,7 +8,9 @@ const StyledSingleProduct = styled(Link)`
   text-decoration: none;
   color: initial;
   transition: transform 150ms ease-out;
+  border: 1px #e4e4e4 solid;
   border-radius: 1rem;
+  padding: 0.5rem;
   :hover {
     transform: scale(1.05);
     text-decoration: none;

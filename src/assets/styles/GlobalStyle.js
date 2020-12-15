@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
@@ -71,6 +70,8 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
     scroll-padding-top: 7.9rem;
+    scroll-behavior: smooth;
+
     @media (min-width: 728px) {
       scroll-padding-top: 8.9rem;
     }

@@ -21,18 +21,16 @@ const Address = styled.address`
   font-style: normal;
 `;
 const StyledTitle = styled(Title)`
-${({theme}) => theme.media.tablet} {
-  padding-left: 2rem;
-}
-`
-const StyledH2 = styled.h2`
-  padding: 1rem 0;
+  ${({ theme }) => theme.media.tablet} {
+    padding-left: 2rem;
+  }
 `;
+
 const Contact = () => (
-  <StyledContainer id='contact' noPadding>
+  <StyledContainer id="contact" noPadding>
     <StyledTitle contact>Kontakt</StyledTitle>
     <StyledContainer flex noPadding noMargin noPaddingy spaceBetween>
-      <StyledColumn>      
+      <StyledColumn>
         <StyledHeader>Dane kontaktowe</StyledHeader>
         <Address>
           Terra Tomasz Jakubiec <br />
@@ -54,10 +52,9 @@ const Contact = () => (
           NIP: 678 112 46 21 <br />
           Konto (zł): 42 2490 0005 0000 4530 5842 5239 <br />
           Konto (euro): 03 2490 0005 0000 4600 9434 9362 <br />
-
         </Address>
       </StyledColumn>
-      { /* <ContactForm /> */}
+      {/* <ContactForm /> */}
     </StyledContainer>
   </StyledContainer>
 );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Logo from 'components/Logo/Logo';
@@ -7,7 +7,7 @@ import Hamburger from 'components/Hamburger/Hamburger';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
 */
 import Nav from 'components/Nav/Nav';
-import FacebookSaleBanner from 'components/FacebookSaleBanner/FacebookSaleBanner'
+import FacebookSaleBanner from 'components/FacebookSaleBanner/FacebookSaleBanner';
 
 const StyledHeaderWrapper = styled.header`
   width: 100%;
@@ -32,24 +32,24 @@ const HeaderTop = styled.div`
   align-items: center;
   ${({ theme }) => theme.media.tablet} {
     grid-template-columns: auto 40rem;
-    max-width: ${({theme}) => theme.maxwidth};
-    padding: .5rem 0;
+    max-width: ${({ theme }) => theme.maxwidth};
+    padding: 0.5rem 0;
   }
 `;
 
 const Menu = styled.nav`
   background-color: ${({ theme }) => theme.color.primary};
-  ${({theme}) => theme.media.tablet} {
+  ${({ theme }) => theme.media.tablet} {
     background-color: initial;
   }
 `;
 const StyledLink = styled(Link)`
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   justify-self: center;
-  ${({theme}) => theme.media.tablet} {
+  ${({ theme }) => theme.media.tablet} {
     justify-self: start;
   }
-`
+`;
 
 const Header = () => {
   /*
@@ -62,21 +62,19 @@ const Header = () => {
 
   return (
     <>
-    <StyledHeaderWrapper>
-      <HeaderTop>
-        <StyledLink to="/">
-          <Logo />
-        </StyledLink>
-        <Menu>
-          <Nav />
-        </Menu>
-      </HeaderTop>  
-      <FacebookSaleBanner />
-      {/* <Hamburger onClick={toggleMobileMenu} isOpen={isMenuOpen} />
+      <StyledHeaderWrapper>
+        <HeaderTop>
+          <StyledLink to="/">
+            <Logo />
+          </StyledLink>
+          <Menu>
+            <Nav />
+          </Menu>
+        </HeaderTop>
+        <FacebookSaleBanner />
+        {/* <Hamburger onClick={toggleMobileMenu} isOpen={isMenuOpen} />
       <MobileMenu isOpen={isMenuOpen} /> */}
-
-    </StyledHeaderWrapper> 
-
+      </StyledHeaderWrapper>
     </>
   );
 };

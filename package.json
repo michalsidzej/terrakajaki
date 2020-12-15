@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Michal Sobieraj-Jakubiec <michalsidzej@gmail.com>",
   "dependencies": {
+    "@stripe/stripe-js": "^1.11.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.25.3",
     "gatsby-background-image": "^1.2.0",
@@ -23,7 +24,8 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-inlinesvg": "^2.1.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "use-shopping-cart": "^2.3.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.11.1",
@@ -43,7 +45,7 @@
     "husky": "^4.3.0",
     "i": "^0.3.6",
     "lint-staged": "^10.5.1",
-    "npm": "^7.0.10",
+    "npm": "^7.1.2",
     "prettier": "^2.1.2",
     "styled-components": "^5.2.1",
     "stylelint": "^13.7.2",

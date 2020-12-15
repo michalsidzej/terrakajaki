@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { StyledButton } from 'components/Button/Button';
 import HeroImage from 'components/HeroImage/HeroImage';
-import PresaleBanner from 'components/PresaleBanner/PresaleBanner';
 
 const HeroWrapper = styled.div`
   ${({ theme }) => theme.media.tablet} {
@@ -50,15 +49,14 @@ const StyledHeader = styled.h2`
 `;
 const Button = styled(StyledButton)``;
 
-const Hero = ({ fileName, alt }) => (
+const Hero = ({ fileName, alt, header, button, to }) => (
   <HeroWrapper>
-    <PresaleBanner />
     <HeroImageWrapper>
       <HeroImage fileName={fileName} alt={alt} />
       <HeroCaption>
-        <HeroCaptionText>   
-          <StyledHeader>Mamy fajne kajaki</StyledHeader>
-          <Button to="/sklep/"> Zobacz </Button>
+        <HeroCaptionText>
+          <StyledHeader>{header}</StyledHeader>
+          <Button to={to}> {button} </Button>
         </HeroCaptionText>
       </HeroCaption>
     </HeroImageWrapper>
@@ -68,6 +66,9 @@ const Hero = ({ fileName, alt }) => (
 Hero.propTypes = {
   fileName: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  header: PropTypes.string.isRequired,
+  button: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
 };
 
 export default Hero;
