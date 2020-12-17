@@ -42,8 +42,8 @@ const Presale = () => (
     <Container>
       <StyledTitle>Przedsprzedaż</StyledTitle>
       <StyledH2>
-        Zamów do 31.12, a otrzymasz 15% zniżki, a także możesz wybrać kolor jaki
-        chcesz!
+        Zamów do 31 grudnia, a otrzymasz 15% zniżki na kajaki Exo, możesz także
+        wybrać kolor jaki chcesz!
       </StyledH2>
       <StyledParagraph>
         W środowisku zostaliśmy już przyzwyczajeni do oczekiwania na zamawiane

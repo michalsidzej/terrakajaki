@@ -22,6 +22,5 @@
   "React import" : {
     "prefix": "react",
     "body": ["import React from 'react';", "import styled from 'styled-components';", "import PropTypes from 'prop-types';", "", "const $1 = () => (", "  $0", ");", "", "export default $1;" ]
-
   }
 }
