@@ -195,6 +195,13 @@ const SingleProductTemplate = ({ pageContext }) => {
     ['Wyporność', `${volume} l`],
   ];
 
+  let result;
+  if (brand[0].brandName === 'EXO') {
+    result = 0.15;
+  }
+  if (brand[0].brandName === 'Spade') {
+    result = 0.1;
+  }
   return (
     <MainTemplate>
       <PresaleBanner />
@@ -223,7 +230,7 @@ const SingleProductTemplate = ({ pageContext }) => {
                   <ColoredLink to="/przedsprzedaz/">Przedsprzedaż!</ColoredLink>
                 </StyledHeader>
                 <CrossOut>{price}&nbsp;zł</CrossOut>&nbsp;
-                <Discount>{price * 0.85}&nbsp;zł*</Discount>
+                <Discount>{price * (1 - result)}&nbsp;zł*</Discount>
               </Price>
               <StyledHeader>
                 Zapraszamy do zamówień przez{' '}

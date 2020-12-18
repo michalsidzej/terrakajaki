@@ -31,15 +31,28 @@ const ProductDetails = styled.p``;
 
 const SingleProduct = ({ brand, name, price, shortDetails, fluid, slug }) => {
   const path = `/kayaks/${slug}`;
+  let result;
+  let discount;
+  if (brand[0].brandName === 'EXO') {
+    result = 0.15;
+    discount = '-15%';
+  }
+  if (brand[0].brandName === 'Spade') {
+    result = 0.1;
+    discount = '-10%';
+  }
+
+  console.log(result);
   return (
     <StyledSingleProduct to={path}>
-      <ProductImage fluid={fluid} />
+      <ProductImage discount={discount} fluid={fluid} />
       <ProductSummary>
         <ProductName>
           {brand.map(({ brandName }) => `${brandName}`).join(' ')} {name}{' '}
         </ProductName>
         <Price>
-          <CrossOut>{price} zł</CrossOut> <Discount>{price * 0.85} zł</Discount>
+          <CrossOut>{price} zł</CrossOut>{' '}
+          <Discount>{price * (1 - result)} zł</Discount>
         </Price>
         <ProductDetails>{shortDetails}</ProductDetails>
       </ProductSummary>
