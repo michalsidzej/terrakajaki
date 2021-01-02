@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import PresaleBanner from 'components/PresaleBanner/PresaleBanner';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import ShopTemplate from 'templates/ShopTemplate/ShopTemplate';
 import Colors from 'components/Product/Colors';
@@ -110,13 +109,13 @@ const Price = styled.h2`
   font-size: 2.2rem;
   padding: 1rem 0;
 `;
-const CrossOut = styled.span`
+/* const CrossOut = styled.span`
   text-decoration: line-through;
   margin-right: 0.5rem;
 `;
 const Discount = styled.span`
   color: #db2100;
-`;
+`; */
 
 const StyledHeader = styled.h3`
   ${({ theme }) => theme.media.tablet} {
@@ -126,9 +125,11 @@ const StyledHeader = styled.h3`
 const StyledLink = styled.a`
   color: ${({ theme }) => theme.color.primary};
 `;
+/*
 const ColoredLink = styled(Link)`
   color: ${({ theme }) => theme.color.primary};
 `;
+*/
 
 const SingleProductTemplate = ({ pageContext }) => {
   const { allContentfulProduct } = useStaticQuery(graphql`
@@ -195,16 +196,15 @@ const SingleProductTemplate = ({ pageContext }) => {
     ['Wyporność', `${volume} l`],
   ];
 
-  let result;
+  /* let result;
   if (brand[0].brandName === 'EXO') {
     result = 0.15;
   }
   if (brand[0].brandName === 'Spade') {
     result = 0.1;
-  }
+  } */
   return (
     <MainTemplate>
-      <PresaleBanner />
       <StyledContainer>
         <GridContainer>
           <ProductMedia>
@@ -226,11 +226,11 @@ const SingleProductTemplate = ({ pageContext }) => {
               </InfoHeader>
 
               <Price>
-                <StyledHeader>
+                {/* <StyledHeader>
                   <ColoredLink to="/przedsprzedaz/">Przedsprzedaż!</ColoredLink>
-                </StyledHeader>
-                <CrossOut>{price}&nbsp;zł</CrossOut>&nbsp;
-                <Discount>{price * (1 - result)}&nbsp;zł*</Discount>
+                </StyledHeader> */}
+                {price}&nbsp;zł
+                {/* <Discount>{price * (1 - result)}&nbsp;zł*</Discount> */}
               </Price>
               <StyledHeader>
                 Zapraszamy do zamówień przez{' '}

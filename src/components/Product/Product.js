@@ -16,6 +16,7 @@ const StyledSingleProduct = styled(Link)`
     text-decoration: none;
   }
 `;
+/*
 const CrossOut = styled.span`
   text-decoration: line-through;
   margin-right: 0.5rem;
@@ -23,6 +24,8 @@ const CrossOut = styled.span`
 const Discount = styled.span`
   color: #db2100;
 `;
+*/
+
 const ProductSummary = styled.summary``;
 
 const ProductName = styled.h3``;
@@ -31,6 +34,7 @@ const ProductDetails = styled.p``;
 
 const SingleProduct = ({ brand, name, price, shortDetails, fluid, slug }) => {
   const path = `/kayaks/${slug}`;
+  /*
   let result;
   let discount;
   if (brand[0].brandName === 'EXO') {
@@ -41,19 +45,16 @@ const SingleProduct = ({ brand, name, price, shortDetails, fluid, slug }) => {
     result = 0.1;
     discount = '-10%';
   }
+  */
 
-  console.log(result);
   return (
     <StyledSingleProduct to={path}>
-      <ProductImage discount={discount} fluid={fluid} />
+      <ProductImage fluid={fluid} />
       <ProductSummary>
         <ProductName>
           {brand.map(({ brandName }) => `${brandName}`).join(' ')} {name}{' '}
         </ProductName>
-        <Price>
-          <CrossOut>{price} zł</CrossOut>{' '}
-          <Discount>{price * (1 - result)} zł</Discount>
-        </Price>
+        <Price>{price} zł</Price>
         <ProductDetails>{shortDetails}</ProductDetails>
       </ProductSummary>
     </StyledSingleProduct>
