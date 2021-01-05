@@ -16,7 +16,7 @@ const StyledSingleProduct = styled(Link)`
     text-decoration: none;
   }
 `;
-/*
+
 const CrossOut = styled.span`
   text-decoration: line-through;
   margin-right: 0.5rem;
@@ -24,29 +24,35 @@ const CrossOut = styled.span`
 const Discount = styled.span`
   color: #db2100;
 `;
-*/
 
 const ProductSummary = styled.summary``;
-
 const ProductName = styled.h3``;
 const Price = styled.h4``;
 const ProductDetails = styled.p``;
 
+const PriceDiscount = ({ price }) => (
+  <Price>
+    <CrossOut>{price} zł</CrossOut>
+    <Discount>{price * 0.9} zł</Discount>
+  </Price>
+);
+const PriceNormal = ({ price }) => <Price>{price} zł</Price>;
+
 const SingleProduct = ({ brand, name, price, shortDetails, fluid, slug }) => {
   const path = `/kayaks/${slug}`;
-  /*
-  let result;
-  let discount;
-  if (brand[0].brandName === 'EXO') {
-    result = 0.15;
-    discount = '-15%';
-  }
-  if (brand[0].brandName === 'Spade') {
-    result = 0.1;
-    discount = '-10%';
-  }
-  */
 
+  let result;
+  if (brand[0].brandName === 'EXO') {
+    result = 0.1;
+  } else {
+    result = 0;
+  }
+  const PriceComponent =
+    result === 0.1 ? (
+      <PriceDiscount price={price} />
+    ) : (
+      <PriceNormal price={price} />
+    );
   return (
     <StyledSingleProduct to={path}>
       <ProductImage fluid={fluid} />
@@ -54,7 +60,7 @@ const SingleProduct = ({ brand, name, price, shortDetails, fluid, slug }) => {
         <ProductName>
           {brand.map(({ brandName }) => `${brandName}`).join(' ')} {name}{' '}
         </ProductName>
-        <Price>{price} zł</Price>
+        {PriceComponent}
         <ProductDetails>{shortDetails}</ProductDetails>
       </ProductSummary>
     </StyledSingleProduct>

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -109,13 +110,13 @@ const Price = styled.h2`
   font-size: 2.2rem;
   padding: 1rem 0;
 `;
-/* const CrossOut = styled.span`
+const CrossOut = styled.span`
   text-decoration: line-through;
   margin-right: 0.5rem;
 `;
 const Discount = styled.span`
   color: #db2100;
-`; */
+`;
 
 const StyledHeader = styled.h3`
   ${({ theme }) => theme.media.tablet} {
@@ -130,7 +131,13 @@ const ColoredLink = styled(Link)`
   color: ${({ theme }) => theme.color.primary};
 `;
 */
-
+const PriceDiscount = ({ price }) => (
+  <Price>
+    <CrossOut>{price} zł</CrossOut>
+    <Discount>{price * 0.9} zł</Discount>
+  </Price>
+);
+const PriceNormal = ({ price }) => <Price>{price} zł</Price>;
 const SingleProductTemplate = ({ pageContext }) => {
   const { allContentfulProduct } = useStaticQuery(graphql`
     query MyQuery {
@@ -196,13 +203,18 @@ const SingleProductTemplate = ({ pageContext }) => {
     ['Wyporność', `${volume} l`],
   ];
 
-  /* let result;
+  let result;
   if (brand[0].brandName === 'EXO') {
-    result = 0.15;
-  }
-  if (brand[0].brandName === 'Spade') {
     result = 0.1;
-  } */
+  } else {
+    result = 0;
+  }
+  const PriceComponent =
+    result === 0.1 ? (
+      <PriceDiscount price={price} />
+    ) : (
+      <PriceNormal price={price} />
+    );
   return (
     <MainTemplate>
       <StyledContainer>
@@ -225,13 +237,7 @@ const SingleProductTemplate = ({ pageContext }) => {
                 {productName}
               </InfoHeader>
 
-              <Price>
-                {/* <StyledHeader>
-                  <ColoredLink to="/przedsprzedaz/">Przedsprzedaż!</ColoredLink>
-                </StyledHeader> */}
-                {price}&nbsp;zł
-                {/* <Discount>{price * (1 - result)}&nbsp;zł*</Discount> */}
-              </Price>
+              {PriceComponent}
               <StyledHeader>
                 Zapraszamy do zamówień przez{' '}
                 <StyledLink href="https://facebook.com/terrakajaki">
