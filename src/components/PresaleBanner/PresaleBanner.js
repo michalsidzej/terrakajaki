@@ -32,7 +32,7 @@ const Centerer = styled.div`
   padding: 0 2rem;
 
   :after {
-    content: '-15%';
+    content: '-10%';
     font-size: 180px;
     opacity: 15%;
     color: ${({ theme }) => theme.color.white};
@@ -69,8 +69,8 @@ const BannerButton = styled(StyledButton)`
 const PresaleBanner = () => (
   <BannerCaption>
     <Centerer flex>
-      <StyledHeader>Zamów dziś, a otrzymasz 15% rabatu!</StyledHeader>
-      <BannerButton to="/przedsprzedaz/"> Przedsprzedaż </BannerButton>
+      <StyledHeader>Zamów dziś, a otrzymasz 10% rabatu!</StyledHeader>
+      <BannerButton to="/przedsprzedaz/">Przedsprzedaż </BannerButton>
     </Centerer>
   </BannerCaption>
 );

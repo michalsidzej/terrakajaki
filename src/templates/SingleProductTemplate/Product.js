@@ -261,12 +261,17 @@ const SingleProductTemplate = ({ pageContext }) => {
             <DetailsHeader>Specyfikacja techniczna</DetailsHeader>
             <DetailsTable>
               <tbody>
-                {tableContent.map((item) => (
-                  <tr key={item[0]}>
-                    <TableHeader>{item[0]}</TableHeader>
-                    <TableData>{item[1]}</TableData>
-                  </tr>
-                ))}
+                {tableContent.map((item) => {
+                  if (!item[1].includes('null')) {
+                    return (
+                      <tr key={item[0]}>
+                        <TableHeader>{item[0]}</TableHeader>
+                        <TableData>{item[1]}</TableData>
+                      </tr>
+                    );
+                  }
+                  return <></>;
+                })}
               </tbody>
             </DetailsTable>
             <DetailsHeader>
