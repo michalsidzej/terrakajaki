@@ -203,12 +203,12 @@ const SingleProductTemplate = ({ pageContext }) => {
     ['Wyporność', `${volume} l`],
   ];
 
-  let result;
-  if (brand[0].brandName === 'EXO') {
-    result = 0.1;
-  } else {
-    result = 0;
-  }
+  const result = 0;
+  // if (brand[0].brandName === 'EXO') {
+  //   result = 0.1;
+  // } else {
+  //   result = 0;
+  // }
   const PriceComponent =
     result === 0.1 ? (
       <PriceDiscount price={price} />
