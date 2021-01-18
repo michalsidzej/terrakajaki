@@ -41,12 +41,12 @@ const PriceNormal = ({ price }) => <Price>{price} zł</Price>;
 const SingleProduct = ({ brand, name, price, shortDetails, fluid, slug }) => {
   const path = `/kayaks/${slug}`;
 
-  let result;
-  if (brand[0].brandName === 'EXO') {
-    result = 0.1;
-  } else {
-    result = 0;
-  }
+  const result = 0;
+  // if (brand[0].brandName === 'EXO') {
+  //   result = 0.1;
+  // } else {
+  //   result = 0;
+  // }
   const PriceComponent =
     result === 0.1 ? (
       <PriceDiscount price={price} />
