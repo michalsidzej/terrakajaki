@@ -27,12 +27,12 @@ const HeroMask = styled.div`
   opacity: 24%;
 `;
 
-const HeroImage = ({ fileName, alt }) => {
+const HeroImage = ({ fileName, alt, children }) => {
   const { allImageSharp } = useStaticQuery(graphql`
     query {
       allImageSharp {
         nodes {
-          fluid(quality: 90, maxWidth: 1920, maxHeight: 757) {
+          fluid(quality: 90, maxWidth: 1920, maxHeight: 900) {
             originalName
             ...GatsbyImageSharpFluid_withWebp
           }
@@ -47,15 +47,28 @@ const HeroImage = ({ fileName, alt }) => {
 
   return (
     <StyledFigure>
-      <StyledImage fluid={fluid} alt={alt} />
+      <StyledImage
+        fluid={fluid}
+        alt={alt}
+        imgStyle={{
+          objectFit: 'cover',
+        }}
+      />
       <HeroMask />
+      {children}
     </StyledFigure>
   );
 };
-
+HeroImage.defaultProps = {
+  children: null,
+};
 HeroImage.propTypes = {
   fileName: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
 
 export default HeroImage;

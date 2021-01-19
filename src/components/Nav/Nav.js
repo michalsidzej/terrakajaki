@@ -34,7 +34,7 @@ const Nav = () => (
       <StyledLink to="/sklep/">Sklep</StyledLink>
     </StyledListItem>
     <StyledListItem>
-      <StyledLink to="/#about">O&nbsp;nas</StyledLink>
+      <StyledLink to="/o-nas/">O&nbsp;nas</StyledLink>
     </StyledListItem>
     <StyledListItem>
       <StyledLink to="/#contact">Kontakt</StyledLink>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { StyledButton } from 'components/Button/Button';
 import HeroImage from 'components/HeroImage/HeroImage';
@@ -35,6 +35,13 @@ const HeroCaptionText = styled.div`
   width: ${({ theme }) => theme.maxwidth};
   padding: 2rem;
   max-width: 100%;
+  ${({ right }) =>
+    right &&
+    css`
+      ${({ theme }) => theme.media.tablet} {
+        text-align: right;
+      }
+    `}
 `;
 
 const StyledHeader = styled.h2`
@@ -49,12 +56,12 @@ const StyledHeader = styled.h2`
 `;
 const Button = styled(StyledButton)``;
 
-const Hero = ({ fileName, alt, header, button, to }) => (
+const Hero = ({ fileName, alt, header, button, to, right }) => (
   <HeroWrapper>
     <HeroImageWrapper>
       <HeroImage fileName={fileName} alt={alt} />
       <HeroCaption>
-        <HeroCaptionText>
+        <HeroCaptionText right={right}>
           <StyledHeader>{header}</StyledHeader>
           <Button to={to}> {button} </Button>
         </HeroCaptionText>
@@ -62,13 +69,16 @@ const Hero = ({ fileName, alt, header, button, to }) => (
     </HeroImageWrapper>
   </HeroWrapper>
 );
-
+Hero.defaultProps = {
+  right: false,
+};
 Hero.propTypes = {
   fileName: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
   button: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
+  right: PropTypes.bool,
 };
 
 export default Hero;

@@ -33,10 +33,16 @@ const Contact = () => (
       <StyledColumn>
         <StyledHeader>Dane kontaktowe</StyledHeader>
         <Address>
-          Terra Tomasz Jakubiec <br />
+          Tomasz Jakubiec <br />
           tel.:{' '}
           <StyledLink href="tel:+48 603 305 812">
             +48 603 305 812
+          </StyledLink>{' '}
+          <br />
+          Michał Sobieraj-Jakubiec <br />
+          tel.:{' '}
+          <StyledLink href="tel:+48 695 283 124">
+            +48 695 283 124
           </StyledLink>{' '}
           <br />
           email:{' '}
@@ -47,6 +53,8 @@ const Contact = () => (
         </Address>
         <StyledHeader>Dane firmowe</StyledHeader>
         <Address>
+          Terra Tomasz Jakubiec
+          <br />
           Ul. Krucza 4c <br />
           30-245 Kraków <br />
           NIP: 678 112 46 21 <br />
