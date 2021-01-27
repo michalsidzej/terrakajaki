@@ -82,6 +82,7 @@ const DetailsHeader = styled.h2`
 
 const DetailsParagraph = styled.p`
   padding: 1rem 0;
+  white-space: pre-wrap;
 `;
 
 const DetailsTable = styled.table`
@@ -253,7 +254,12 @@ const SingleProductTemplate = ({ pageContext }) => {
           <ProductDetails>
             <DetailsHeader>{shortDescription}</DetailsHeader>
 
-            <DetailsParagraph>{description.description}</DetailsParagraph>
+            <DetailsParagraph>
+              {
+                // console.log(description)
+                description.description
+              }
+            </DetailsParagraph>
 
             <DetailsHeader>Dostępne kolory:</DetailsHeader>
             <Colors />
