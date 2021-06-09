@@ -1,9 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const ColorsWrapper = styled.div`
-
-`
+const ColorsWrapper = styled.div``;
 const Color = styled.div`
   display: inline-block;
   margin: 0.5rem;
@@ -54,20 +53,49 @@ const Color = styled.div`
     css`
       background: linear-gradient(45deg, #ffd500 0 50%, #fd4052 50% 100%);
     `}
+  ${({ bubblegum }) =>
+    bubblegum &&
+    css`
+      background: linear-gradient(45deg, #b90066 0 50%, #37b6f5 50% 100%);
+    `}
 `;
 
-const Colors = () => (
-  <ColorsWrapper>
-    <Color blue />
-    <Color blueTiger />
-    <Color green />
-    <Color greenTiger />
-    <Color red />
-    <Color redTiger />
-    <Color fire />
-    <Color pink />
-    <Color yellow />
-  </ColorsWrapper>
-);
+// eslint-disable-next-line react/prop-types
+const Colors = ({ brand, isAugh, isXW1 }) => {
+  console.log(brand);
+  const isExo = brand === 'EXO';
+  const isSpade = brand === 'Spade';
+
+  return (
+    <ColorsWrapper>
+      {isExo && (
+        <>
+          {!isAugh && <Color blue />}
+          {!isAugh && !isXW1 && <Color blueTiger />}
+          <Color green />
+          {!isAugh && !isXW1 && <Color greenTiger />}
+          <Color red />
+          {!isAugh && !isXW1 && (
+            <>
+              <Color redTiger />
+              <Color fire />
+              <Color pink />
+              <Color yellow />
+            </>
+          )}
+        </>
+      )}
+      {isSpade && (
+        <>
+          <Color blue />
+          <Color red />
+          <Color pink />
+          <Color yellow />
+          <Color bubblegum />
+        </>
+      )}
+    </ColorsWrapper>
+  );
+};
 
 export default Colors;

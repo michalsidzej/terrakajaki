@@ -262,7 +262,11 @@ const SingleProductTemplate = ({ pageContext }) => {
             </DetailsParagraph>
 
             <DetailsHeader>Dostępne kolory:</DetailsHeader>
-            <Colors />
+            <Colors
+              brand={brand[0].brandName}
+              isAugh={productName === 'Augh'}
+              isXW1={productName === 'XW1'}
+            />
 
             <DetailsHeader>Specyfikacja techniczna</DetailsHeader>
             <DetailsTable>
