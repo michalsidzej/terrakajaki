@@ -34,7 +34,7 @@ const Shop = () => (
         Odpowiedni dobór kształtu kajaka jest jedną z najważniejszych decyzji,
         kiedy zaczynamy przygodę z kajakarstwem. W razie pytań odnośnie doboru
         kajaka, służymy pomocą. Zadzwoń na{' '}
-        <a href="tel:+48695283124">+48 695 283 124</a> lub napisz na{' '}
+        <a href="tel:+48571393776">+48 571 393 776</a> lub napisz na{' '}
         <a href="mailto:info@terrakajaki.pl">info@terrakajaki.pl</a>
       </StyledDescription>
       <ShopTemplate />
