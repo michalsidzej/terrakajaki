@@ -41,8 +41,8 @@ const Contact = () => (
           <br />
           Michał Sobieraj-Jakubiec <br />
           tel.:{' '}
-          <StyledLink href="tel:+48 695 283 124">
-            +48 695 283 124
+          <StyledLink href="tel:+48 571 393 776">
+            +48 571 393 776
           </StyledLink>{' '}
           <br />
           email:{' '}
